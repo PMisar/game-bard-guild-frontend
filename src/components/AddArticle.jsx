@@ -1,41 +1,38 @@
+// src/components/AddArticle.jsx
+
 import { useState } from "react";
 import axios from "axios";
 
 const API_URL = "http://localhost:5005";
 
-
-function AddTask(props) {
+export default function AddArticle(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-  
   const handleSubmit = (e) => {
     e.preventDefault();
+    const requestBody = { title, description };
 
-    // We need the project id when creating the new task
-    const { projectId } = props;
-    // Create an object representing the body of the POST request
-    const requestBody = { title, description, projectId };
+    // Get the token from the localStorage
+    const storedToken = localStorage.getItem("authToken");
 
     axios
-      .post(`${API_URL}/api/tasks`, requestBody)
+      .post(`${API_URL}/api/articles`, requestBody, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
       .then((response) => {
-        // Reset the state to clear the inputs
+        // Reset the state
         setTitle("");
         setDescription("");
-      
-        // Invoke the callback function coming through the props
-        // from the ProjectDetailsPage, to refresh the project details
-        props.refreshProject();
+        props.refreshArticles();
       })
       .catch((error) => console.log(error));
   };
 
-  
   return (
-    <div className="AddTask">
-      <h3>Add New Task</h3>
-      
+    <div className="AddArticle">
+      <h3>Write an article</h3>
+
       <form onSubmit={handleSubmit}>
         <label>Title:</label>
         <input
@@ -53,10 +50,8 @@ function AddTask(props) {
           onChange={(e) => setDescription(e.target.value)}
         />
 
-        <button type="submit">Add Task</button>
+        <button type="submit">Share</button>
       </form>
     </div>
   );
 }
-
-export default AddTask;
