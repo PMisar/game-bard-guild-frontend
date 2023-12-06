@@ -1,14 +1,9 @@
 // src/pages/ArticleDetailsPage.jsx
-
 import { useState, useEffect } from "react";
 import { useParams, Link } from 'react-router-dom';
 import axios from "axios";
-// import AddTask from "../components/AddTask";
-// import TaskCard from "../components/TaskCard";
-
 
 const API_URL = "http://localhost:5005";
-
 
 export default function ArticleDetailsPage (props) {
   const [article, setArticle] = useState(null);
@@ -57,11 +52,6 @@ export default function ArticleDetailsPage (props) {
           <p>{article.description}</p>
         </>
       )}
-
-      
-      {/* <AddTask refreshArticle={getArticle} articleId={articleId} />          
-
-      { article && article.tasks.map((task) => <TaskCard key={task._id} {...task} /> )}  */}
 
       <Link to="/articles">
         <button>Back to articles</button>

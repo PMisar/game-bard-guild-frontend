@@ -1,5 +1,4 @@
 // src/components/Navbar.jsx
-
 import { Link } from "react-router-dom";
 import { useContext } from "react";  
 import { AuthContext } from "../context/auth.context";
@@ -17,6 +16,12 @@ export default function Navbar() {
 
       {isLoggedIn && (
         <>
+          {/* <Link to="/news">
+            <button>News</button>
+          </Link> */}
+          {/* <Link to="/reviews">
+            <button>Reviews</button>
+          </Link> */}
           <Link to="/articles">
             <button>Articles</button>
           </Link>
@@ -28,6 +33,7 @@ export default function Navbar() {
 
       {!isLoggedIn && (
         <>
+          {/* <Link to="news"> <button>News</button> </Link> */}
           <Link to="signup"> <button>Sign Up</button> </Link>
           <Link to="login"> <button>Login</button> </Link>
         </>
