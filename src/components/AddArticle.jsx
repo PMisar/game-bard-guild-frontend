@@ -34,20 +34,19 @@ export default function AddArticle(props) {
       <h3>Write an article</h3>
 
       <form onSubmit={handleSubmit}>
-        <label>Title:</label>
         <input
           type="text"
           name="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          placeholder="Enter the title"
         />
-
-        <label>Description:</label>
         <textarea
           type="text"
           name="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          placeholder="Enter the title"
         />
 
         <button type="submit">Share</button>

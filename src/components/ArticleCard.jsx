@@ -1,5 +1,4 @@
 // src/components/ArticleCard.jsx
-
 import { Link } from "react-router-dom";
 
 // We are deconstructing props object directly in the parentheses of the function

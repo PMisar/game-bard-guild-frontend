@@ -4,4 +4,57 @@
   text-align: center;
 }
 
+.custom-navbar {
+  background-color: #171B2B;
+}
 
+.home-image-container {
+  text-align: center;
+}
+
+.home-image-container img {
+  max-width: 100%;    
+  max-height: 400px;  
+}
+
+/* src/components/HomeImage.css */
+.home-image-container {
+  position: relative;
+}
+
+.video-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  width: 10%; 
+}
+
+.video-element {
+  width: 100%;
+  height: auto;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #171B2B;
+  color: #83A6B2;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #83A6B2; 
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+.centered-paragraph {
+  text-align: center;
+  margin: 0;
+}

@@ -29,20 +29,29 @@ export default function EditArticlePage(props) {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const requestBody = { title, description };
-
+  
+    // Get the token from the localStorage
+    const storedToken = localStorage.getItem("authToken");
+  
     axios
-      .put(`${API_URL}/api/articles/${articleId}`, requestBody)
+      .put(`${API_URL}/api/articles/${articleId}`, requestBody, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
       .then((response) => {
-        navigate(`/articles/${articleId}`)
-      });
+        navigate(`/articles/${articleId}`);
+      })
+      .catch((error) => console.log(error));
   };
   
   
   const deleteArticle = () => {
+    const storedToken = localStorage.getItem("authToken");
     
     axios
-      .delete(`${API_URL}/api/articles/${articleId}`)
-      .then(() => {
+    .delete(`${API_URL}/api/articles/${articleId}`, {
+      headers: { Authorization: `Bearer ${storedToken}` },
+    })      
+    .then(() => {
         navigate("/articles");
       })
       .catch((err) => console.log(err));

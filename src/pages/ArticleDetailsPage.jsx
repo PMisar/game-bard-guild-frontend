@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from 'react-router-dom';
 import axios from "axios";
+import CommentSection from "../components/CommentSection";
 
 const API_URL = "http://localhost:5005";
 
@@ -50,6 +51,20 @@ export default function ArticleDetailsPage (props) {
         <>
           <h1>{article.title}</h1>
           <p>{article.description}</p>
+
+          {article.image && <img src={article.image} alt="Article" />}
+
+<p>User: {article.user && article.user.username}</p>
+
+<p>Tags: {article.tags && article.tags.join(", ")}</p>
+
+<p>Comments: {article.comments && article.comments.length}</p>
+
+<p>Favorites: {article.favorites && article.favorites.length}</p>
+
+<p>Likes: {article.likes && article.likes.length}</p>
+
+          <CommentSection articleId={articleId} />
         </>
       )}
 
