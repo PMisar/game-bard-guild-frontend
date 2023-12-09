@@ -18,22 +18,75 @@ import Profile from "./pages/Profile";
 // import News from "./pages/NewsPage";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 function App() {
   return (
     <div className="App">
       <CustomNavbar />
 
-      <Routes>      
+      <Routes>
         <Route exact path="/" element={<HomePage />} />
-        <Route exact path="/articles" element={ <IsPrivate> <ArticleListPage /> </IsPrivate> }  />
-        <Route exact path="/articles/:articleId" element={ <IsPrivate> <ArticleDetailsPage /> </IsPrivate> } />
-        <Route exact path="/articles/edit/:articleId" element={ <IsPrivate> <EditArticlePage /> </IsPrivate> }  />    
+        <Route
+          exact
+          path="/articles"
+          element={
+            <IsPrivate>
+              {" "}
+              <ArticleListPage />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          exact
+          path="/articles/:articleId"
+          element={
+            <IsPrivate>
+              {" "}
+              <ArticleDetailsPage />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          exact
+          path="/articles/edit/:articleId"
+          element={
+            <IsPrivate>
+              {" "}
+              <EditArticlePage />{" "}
+            </IsPrivate>
+          }
+        />
         {/* <Route exact path="/reviews" element={<IsPrivate> <ReviewsPage /> </IsPrivate>} /> */}
-        <Route exact path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
-        <Route exact path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
+        <Route
+          exact
+          path="/signup"
+          element={
+            <IsAnon>
+              {" "}
+              <SignupPage />{" "}
+            </IsAnon>
+          }
+        />
+        <Route
+          exact
+          path="/login"
+          element={
+            <IsAnon>
+              {" "}
+              <LoginPage />{" "}
+            </IsAnon>
+          }
+        />
         {/* <Route exact path="/news" element={<IsAnon> <NewsPage /> </IsAnon>} /> */}
-        <Route exact path="/profile" element={<IsPrivate> <Profile /> </IsPrivate>} />
+        <Route
+          exact
+          path="/profile"
+          element={
+            <IsPrivate>
+              {" "}
+              <Profile />{" "}
+            </IsPrivate>
+          }
+        />
       </Routes>
 
       <Footer />

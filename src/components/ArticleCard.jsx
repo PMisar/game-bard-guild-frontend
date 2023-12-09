@@ -1,15 +1,16 @@
 // src/components/ArticleCard.jsx
+
 import { Link } from "react-router-dom";
 
-// We are deconstructing props object directly in the parentheses of the function
-export default function ArticleCard ( { title, description, _id } ) {
-  
+export default function ArticleCard({ title, description, _id }) {
   return (
-    <div className="ArticleCard card">
+    <div className="ArticleCard card d-flex flex-column align-items-center justify-content-center">
       <Link to={`/articles/${_id}`}>
-        <h3>{title}</h3>
+        <h3 className="text-center">{title}</h3>
       </Link>
-      <p style={{ maxWidth: "400px" }}>{description} </p>
+      <p className="text-center" style={{ maxWidth: "80%" }}>
+        {description}
+      </p>
     </div>
   );
 }

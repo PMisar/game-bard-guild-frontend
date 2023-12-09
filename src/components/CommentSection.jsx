@@ -1,13 +1,14 @@
 // src/components/CommentSection.jsx
 
-import { useState, useEffect } from "react";
+import React from "react";
+import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 
 const API_URL = "http://localhost:5005";
 
 export default function CommentSection({ articleId }) {
-  const [comments, setComments] = useState([]);
-  const [newComment, setNewComment] = useState("");
+  const [comments, setComments] = React.useState([]);
+  const [newComment, setNewComment] = React.useState("");
 
   const getComments = () => {
     const storedToken = localStorage.getItem("authToken");
@@ -29,25 +30,24 @@ export default function CommentSection({ articleId }) {
 
     axios
       .post(
+        // `${API_URL}/api/articles/${articleId}/comments`,
         `${API_URL}/api/comments`,
         { text: newComment, articleId },
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
       .then((response) => {
         setNewComment("");
-        getComments(); 
+        getComments();
       })
       .catch((error) => console.log(error));
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     getComments();
   }, [articleId]);
 
   return (
-    <div className="CommentSection">
-      <h3>Comments</h3>
-
+    <div className="CommentSection d-flex flex-wrap justify-content-center align-items-center">
       {comments &&
         comments.map((comment) => (
           <div key={comment._id}>
@@ -56,17 +56,28 @@ export default function CommentSection({ articleId }) {
           </div>
         ))}
 
-      <form onSubmit={handleCommentSubmit}>
-        <label htmlFor="newComment">Add a comment:</label>
-        <textarea
-          id="newComment"
-          name="newComment"
-          value={newComment}
-          onChange={(e) => setNewComment(e.target.value)}
-          placeholder="Add a comment..."
-        />
-        <button type="submit">Submit</button>
-      </form>
+      <Form onSubmit={handleCommentSubmit} className="w-100">
+        <Form.Group className="mb-3">
+          <Form.Control
+            as="textarea"
+            id="newComment"
+            name="newComment"
+            value={newComment}
+            onChange={(e) => setNewComment(e.target.value)}
+            placeholder="Add a comment..."
+          />
+        </Form.Group>
+
+        <div className="d-grid gap-2">
+          <Button
+            type="submit"
+            variant="secondary"
+            style={{ backgroundColor: "#0D2A4A" }}
+          >
+            Submit
+          </Button>
+        </div>
+      </Form>
     </div>
   );
 }

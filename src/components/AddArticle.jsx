@@ -1,13 +1,15 @@
 // src/components/AddArticle.jsx
 
-import { useState } from "react";
+import React from "react";
+import { Form, Button } from "react-bootstrap";
 import axios from "axios";
+// import CustomButton from "./Button"; 
 
 const API_URL = "http://localhost:5005";
 
 export default function AddArticle(props) {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [title, setTitle] = React.useState("");
+  const [description, setDescription] = React.useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,7 +23,6 @@ export default function AddArticle(props) {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        // Reset the state
         setTitle("");
         setDescription("");
         props.refreshArticles();
@@ -30,27 +31,42 @@ export default function AddArticle(props) {
   };
 
   return (
-    <div className="AddArticle">
-      <h3>Write an article</h3>
+    <div className="AddArticle d-flex flex-wrap justify-content-center align-items-center">
+      <h3 className="w-100 mb-4">Write an article</h3>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Enter the title"
-        />
-        <textarea
-          type="text"
-          name="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          placeholder="Enter the title"
-        />
+      <Form onSubmit={handleSubmit} className="w-100">
+        <Form.Group className="mb-3">
+          <Form.Control
+            type="text"
+            name="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Enter the title"
+          />
+        </Form.Group>
 
-        <button type="submit">Share</button>
-      </form>
+        <Form.Group className="mb-3">
+          <Form.Control
+            as="textarea"
+            type="text"
+            name="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder="Enter the description"
+          />
+        </Form.Group>
+
+        <div className="d-grid gap-2">
+          <Button
+            type="submit"
+            variant="secondary"
+            style={{ backgroundColor: "#0D2A4A" }}
+          >
+            Share
+          </Button>
+        </div>
+        {/* <CustomButton onClick={handleSubmit}>Share</CustomButton> */}
+      </Form>
     </div>
   );
 }

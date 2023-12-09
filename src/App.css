@@ -2,11 +2,17 @@
 
 .App {
   text-align: center;
+  font-family: 'Inconsolata', monospace;
 }
 
 .custom-navbar {
   background-color: #171B2B;
 }
+
+.custom-navbar .navbar-brand {
+  margin-left: 10px;
+}
+
 
 .home-image-container {
   text-align: center;
@@ -17,7 +23,6 @@
   max-height: 400px;  
 }
 
-/* src/components/HomeImage.css */
 .home-image-container {
   position: relative;
 }
@@ -58,3 +63,4 @@ footer {
   text-align: center;
   margin: 0;
 }
+

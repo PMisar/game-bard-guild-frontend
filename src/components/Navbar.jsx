@@ -12,10 +12,19 @@ const CustomNavbar = () => {
     backgroundColor: "#171B2B",
   };
 
+  const brandStyle = {
+    marginLeft: "10px",
+  };
+
+  const welcomeTextStyle = {
+    marginRight: "10px",
+  };
+
   return (
-    <Navbar variant="dark" style={navbarStyle} expand="md">
-      <Navbar.Brand as={Link} to="/">
-      <img
+    // collapseOnSelect + eventKey="1" to collapse on link click
+    <Navbar collapseOnSelect variant="dark" style={navbarStyle} expand="md">
+      <Navbar.Brand as={Link} to="/" style={brandStyle}>
+        <img
           src="/images/Gamebard.png"
           width="140"
           height="30"
@@ -25,81 +34,43 @@ const CustomNavbar = () => {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav className="m-auto">
           {isLoggedIn ? (
             <>
-              <Nav.Link as={Link} to="/news">
-                News
-              </Nav.Link>
-              <Nav.Link as={Link} to="/reviews">
+              <Nav.Link eventKey="2" as={Link} to="/news">
+              News
+            </Nav.Link>
+              <Nav.Link eventKey="3" as={Link} to="/reviews">
                 Reviews
               </Nav.Link>
-              <Nav.Link as={Link} to="/articles">
+              <Nav.Link eventKey="4" as={Link} to="/articles">
                 Articles
               </Nav.Link>
-              <Nav.Link as={Link} to="/profile">
+              <Nav.Link eventKey="5" as={Link} to="/profile">
                 Profile
               </Nav.Link>
-              <Nav.Link onClick={logOutUser}>Logout</Nav.Link>
+              <Nav.Link eventKey="6" onClick={logOutUser}>Logout</Nav.Link>
             </>
           ) : (
             <>
-              <Nav.Link as={Link} to="/news">
+              <Nav.Link eventKey="7" as={Link} to="/news">
                 News
               </Nav.Link>
-              <Nav.Link as={Link} to="/signup">
+              <Nav.Link eventKey="8" as={Link} to="/signup">
                 Sign Up
               </Nav.Link>
-              <Nav.Link as={Link} to="/login">
+              <Nav.Link eventKey="9" as={Link} to="/login">
                 Login
               </Nav.Link>
             </>
           )}
         </Nav>
-        {isLoggedIn && <span className="navbar-text">Welcome, {user.name}</span>}
+        {isLoggedIn && (
+          <span className="navbar-text" style={welcomeTextStyle}>Welcome, {user.name}</span>
+        )}
       </Navbar.Collapse>
     </Navbar>
   );
 };
 
 export default CustomNavbar;
-
-
-// export default function Navbar() {
-//  // Subscribe to the AuthContext to gain access to
-//   // the values from AuthContext.Provider `value` prop
-//   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
-
-//   return (
-//     <nav>
-//       <Link to="/">
-//         <button>Home</button>
-//       </Link>
-
-//       {isLoggedIn && (
-//         <>
-//           {/* <Link to="/news">
-//             <button>News</button>
-//           </Link> */}
-//           <Link to="/reviews">
-//             <button>Reviews</button>
-//           </Link>
-//           <Link to="/articles">
-//             <button>Articles</button>
-//           </Link>
-
-//           <button onClick={logOutUser}>Logout</button>
-//           <span>{user && user.name}</span>
-//         </>
-//       )}
-
-//       {!isLoggedIn && (
-//         <>
-//           {/* <Link to="news"> <button>News</button> </Link> */}
-//           <Link to="signup"> <button>Sign Up</button> </Link>
-//           <Link to="login"> <button>Login</button> </Link>
-//         </>
-//       )}
-//     </nav>
-//   );
-// }

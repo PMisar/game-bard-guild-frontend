@@ -1,4 +1,5 @@
 // src/pages/HomePage.jsx
+
 import React from "react";
 import HomeImage from "../components/HomeImage";
 import ArticleCard from "../components/ArticleCard";
