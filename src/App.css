@@ -1,8 +1,11 @@
 /* App.css */
 
+
 .App {
   text-align: center;
   font-family: 'Inconsolata', monospace;
+  background-color: #83A6B2;
+  /* background-color: #B19D8C; */
 }
 
 .custom-navbar {
@@ -25,6 +28,13 @@
 
 .home-image-container {
   position: relative;
+}
+
+.trailersText {
+  font-family: 'Oswald', sans-serif;
+  margin: 20px;
+  font-size: xx-large;
+
 }
 
 .video-overlay {

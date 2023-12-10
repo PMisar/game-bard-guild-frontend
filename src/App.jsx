@@ -14,11 +14,11 @@ import EditArticlePage from "./pages/EditArticlePage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import Profile from "./pages/Profile";
-// import ReviewsPage from "./pages/ReviewsPage";
+import ReviewsPage from "./pages/ReviewsPage";
 // import News from "./pages/NewsPage";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <CustomNavbar />
@@ -55,7 +55,16 @@ function App() {
             </IsPrivate>
           }
         />
-        {/* <Route exact path="/reviews" element={<IsPrivate> <ReviewsPage /> </IsPrivate>} /> */}
+        <Route
+          exact
+          path="/reviews"
+          element={
+            <IsPrivate>
+              {" "}
+              <ReviewsPage />{" "}
+            </IsPrivate>
+          }
+        />
         <Route
           exact
           path="/signup"
@@ -93,5 +102,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

@@ -5,7 +5,7 @@ import axios from "axios";
 import ArticleCard from "../components/ArticleCard";
 import AddArticle from "../components/AddArticle";
 import CommentSection from "../components/CommentSection";
-import ArticleDetailsPage from "./ArticleDetailsPage";
+import ArticleDetails from "../components/ArticleDetails";
 
 const API_URL = "http://localhost:5005";
 
@@ -30,17 +30,16 @@ export default function ArticleListPage() {
 
   return (
     <div className="container text-center my-4 p-4 border">
+      <div className="ArticleListPage">
+        <AddArticle refreshArticles={getAllArticles} />
 
-    <div className="ArticleListPage">
-      <AddArticle refreshArticles={getAllArticles} />
-
-      {articles.map((article) => (
-        <div key={article._id}>
-        <ArticleCard {...article} />        
-        <CommentSection articleId={article._id} /> {/* Add CommentSection for each article */}
+        {articles.map((article) => (
+          <div key={article._id}>
+            <ArticleCard {...article} />
+            <ArticleDetails article={article} /> {/* Use ArticleDetails for each article */}
+          </div>
+        ))}
       </div>
-      ))}
-    </div>
     </div>
   );
 }
