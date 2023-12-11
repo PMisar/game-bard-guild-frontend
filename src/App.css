@@ -1,10 +1,9 @@
 /* App.css */
 
-
 .App {
   text-align: center;
   font-family: 'Inconsolata', monospace;
-  background-color: #A7D5E5;
+  background-color: #BCD6E5;
 }
 
 .custom-navbar {
@@ -14,7 +13,6 @@
 .custom-navbar .navbar-brand {
   margin-left: 10px;
 }
-
 
 .home-image-container {
   text-align: center;
@@ -33,7 +31,6 @@
   font-family: 'Oswald', sans-serif;
   margin: 20px;
   font-size: xx-large;
-
 }
 
 .video-overlay {
@@ -80,11 +77,6 @@ footer {
   justify-content: center;
 }
 
-.add-article {
-  margin-top: 10px;
-  margin-bottom: 30px;
-}
-
 .comment-section {
   border: solid;
   border-radius: 10px;
@@ -92,4 +84,26 @@ footer {
   padding: 5%;
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+.UserProfileContainer {
+  margin: 20px; /* Adjust the margin as needed */
+}
+
+.UserProfile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Add space between user details and articles */
+}
+
+.ProfilePicture {
+  margin-right: 20px; /* Add space between profile picture and user info */
+}
+
+.UserInfo {
+  flex-grow: 1; /* Allow user info to take remaining space */
+}
+
+.UserArticles {
+  margin-top: 100px; /* Add space between user details and articles */
 }

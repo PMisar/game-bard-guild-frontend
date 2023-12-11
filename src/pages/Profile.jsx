@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ArticleCard from "../components/ArticleCard";
-import ProfileComponent from "../components/ProfileComponent";
+import { Button } from "react-bootstrap";
 
 const API_URL = "http://localhost:5005";
 
@@ -21,6 +21,7 @@ export default function Profile() {
       })
       .then((response) => {
         setUser(response.data);
+        setUserArticles(response.data.articles);
       })
       .catch((error) => console.log(error));
 
@@ -36,10 +37,10 @@ export default function Profile() {
   }, []);
 
   return (
-    <div className="User">
+    <div className="UserProfileContainer">
       {user && (
-        <>
-          <div className="UserProfile">
+        <div className="UserProfile">
+          <div className="ProfilePicture">
             {user.profilePicture && (
               <img
                 src={user.profilePicture}
@@ -47,22 +48,32 @@ export default function Profile() {
                 className="profile-picture"
               />
             )}
-            <div className="user-info">
-              <h1>Welcome, {user.name}!</h1>
-              <p>Email: {user.email}</p>
-              <button onClick={() => handleDeleteUser(user._id)}>
-                Delete User
-              </button>
-            </div>
           </div>
-        </>
-      )}
-      <ProfileComponent />
+          <div className="UserInfo">
+            <h1>Your Profile</h1>
+            <hr />
+            <p>Username: {user.name}</p>
+            <p>Email: {user.email}</p>
 
-      <h2>Your Articles</h2>
-      {userArticles.map((article) => (
-        <ArticleCard key={article._id} {...article} />
-      ))}
+            <Button variant="danger" onClick={() => handleDeleteUser(user._id)}>
+            Delete User
+          </Button>
+          </div>
+        </div>
+      )}
+      
+      <div className="UserArticles">
+        <h2>Your Articles</h2>
+        {userArticles.map((article) => (
+          <ArticleCard key={article._id} {...article} />
+        ))}
+      </div>
     </div>
   );
 }
+
+{/* <h2>Your Articles</h2>
+      {userArticles.map((article) => (
+        <ArticleCard key={article._id} {...article} />
+      ))}
+    </div> */}

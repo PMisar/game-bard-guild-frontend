@@ -158,6 +158,7 @@ export default function CommentSection({ articleId }) {
             value={newComment}
             onChange={handleCommentChange}
             placeholder="Add a comment..."
+            style={{ backgroundColor: '#BCD6E5' }}
           />
           <small className="text-muted">
             Characters remaining: {maxCharacterLimit - characterCount}

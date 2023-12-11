@@ -8,7 +8,7 @@ export default function HomePage() {
     <div>
       <HomeImage />
 
-      <h3 className="trailersText"> Best New Video Game Trailers Of This Year
+      <h3 className="trailersText"> Best New Video Game Trailers Of 2023
  </h3>
       <div style={{ marginTop: '20px', maxWidth: '800px', margin: '0 auto' }}>
         <iframe

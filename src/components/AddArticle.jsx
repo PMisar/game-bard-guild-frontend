@@ -31,7 +31,7 @@ export default function AddArticle(props) {
   };
 
   return (
-    <div className="AddArticle d-flex flex-wrap justify-content-center align-items-center">
+    <div className="AddArticle d-flex flex-wrap justify-content-center align-items-center" style={{ paddingBottom: '30px' }}>
       <h3 className="w-100 mb-4">Write an article</h3>
 
       <Form onSubmit={handleSubmit} className="w-100">
@@ -42,6 +42,7 @@ export default function AddArticle(props) {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Enter the title"
+            style={{ backgroundColor: '#BCD6E5' }}
           />
         </Form.Group>
 
@@ -53,6 +54,7 @@ export default function AddArticle(props) {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Enter the description"
+            style={{ backgroundColor: '#BCD6E5' }}
           />
         </Form.Group>
 

@@ -72,7 +72,7 @@ export default function ArticleDetailsPage(props) {
   };
 
   return (
-    <div className="ArticleDetails" style={{ padding: "10%" }}>
+    <div className="ArticleDetails" style={{ padding: '10%', margin: '20px' }}>
       {article && (
         <>
           <h1>{article.title}</h1>

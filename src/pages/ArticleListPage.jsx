@@ -64,7 +64,7 @@ export default function ArticleListPage() {
   // };
 
   return (
-    <div className="container text-center my-4 p-4 border">
+<div className="container text-center my-4 p-4" style={{ backgroundColor: '#98CEE0'  }}>
       <div className="ArticleListPage">
         <AddArticle refreshArticles={getAllArticles} />
 
@@ -99,6 +99,8 @@ export default function ArticleListPage() {
   );
 }
 
+
+// AYKUTS CODE
 // // src/pages/ArticleListPage.jsx
 
 // import { useState, useEffect } from "react";
