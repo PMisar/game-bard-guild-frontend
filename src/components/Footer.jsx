@@ -1,23 +1,52 @@
 // src/components/Footer.jsx
 
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faGithub,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+import Button from "react-bootstrap/Button";
 
 const Footer = () => {
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer>
+    <footer className="footer">
       <div className="social-icons">
-        <a href="https://github.com/PMisar" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://github.com/PMisar"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FontAwesomeIcon icon={faGithub} />
         </a>
-        <a href="https://www.instagram.com/pejvl_label/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.instagram.com/pejvl_label/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FontAwesomeIcon icon={faInstagram} />
         </a>
-        <a href="https://linkedin.com/in/pavel-m404" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://linkedin.com/in/pavel-m404"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <FontAwesomeIcon icon={faLinkedin} />
         </a>
-        
+      </div>
+      <div className="centered-content">
+        <Button
+          variant="outline-secondary"
+          className="back-to-top-button"
+          onClick={handleScrollToTop}
+        >
+          Back to Top
+        </Button>
       </div>
       <p className="centered-paragraph">Created by Pavel Misař</p>
     </footer>

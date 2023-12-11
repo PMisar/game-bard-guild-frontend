@@ -1,15 +1,15 @@
 // src/components/Profile.js
 
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-const API_URL = 'http://localhost:5005';
+const API_URL = "http://localhost:5005";
 
 const ProfileComponent = ({ userId }) => {
   const [user, setUser] = useState(null);
 
   const getUserInfo = () => {
-    const storedToken = localStorage.getItem('authToken');
+    const storedToken = localStorage.getItem("authToken");
 
     axios
       .get(`${API_URL}/api/users/${userId}`, {

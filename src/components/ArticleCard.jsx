@@ -8,7 +8,7 @@ export default function ArticleCard({ title, description, _id }) {
       <Link to={`/articles/${_id}`}>
         <h3 className="text-center">{title}</h3>
       </Link>
-      <p className="text-center" style={{ maxWidth: "80%" }}>
+      <p className="text-center" style={{ maxWidth: "70%" }}>
         {description}
       </p>
     </div>

@@ -16,13 +16,11 @@ import LoginPage from "./pages/LoginPage";
 import Profile from "./pages/Profile";
 import ReviewsPage from "./pages/ReviewsPage";
 // import News from "./pages/NewsPage";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
   return (
     <div className="App">
       <CustomNavbar />
-
       <Routes>
         <Route exact path="/" element={<HomePage />} />
         <Route
@@ -102,3 +100,4 @@ export default function App() {
     </div>
   );
 }
+

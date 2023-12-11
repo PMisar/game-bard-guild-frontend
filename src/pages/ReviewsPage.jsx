@@ -19,7 +19,6 @@ const ReviewsPage = () => {
         console.log("Auth Token:", authToken); 
         const response = await axios.get(`${API_URL}/api/reviews`, {
           headers: {Authorization: `Bearer ${authToken}`, 
-          
           },
         });
         setReviews(response.data);

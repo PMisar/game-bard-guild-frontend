@@ -65,7 +65,6 @@ export default function AddArticle(props) {
             Share
           </Button>
         </div>
-        {/* <CustomButton onClick={handleSubmit}>Share</CustomButton> */}
       </Form>
     </div>
   );
