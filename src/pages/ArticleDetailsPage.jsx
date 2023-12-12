@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import CommentSection from "../components/CommentSection";
+import ArticleDetails from "../components/ArticleDetails";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+
 
 const API_URL = "http://localhost:5005";
 
@@ -84,7 +86,7 @@ export default function ArticleDetailsPage(props) {
             <Col>
               <p>User: {article.user && article.user.name}</p>
               <p>
-                Created: {article.createdAt && formatDate(article.createdAt)}
+                Written: {article.createdAt && formatDate(article.createdAt)}
               </p>
             </Col>
             <Col>

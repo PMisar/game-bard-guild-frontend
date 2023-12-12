@@ -1,13 +1,16 @@
 /* App.css */
+/* 
+Navbar color: #171B2B;
+Background color: #83A6B2;
+Field color: #BCD6E5
+font-family: 'Inconsolata', monospace;
+font-family: 'Oswald', sans-serif;
+*/
 
 .App {
   text-align: center;
   font-family: 'Inconsolata', monospace;
   background-color: #BCD6E5;
-}
-
-.custom-navbar {
-  background-color: #171B2B;
 }
 
 .custom-navbar .navbar-brand {
@@ -45,6 +48,42 @@
   height: auto;
 }
 
+.comment-section {
+  border: solid;
+  border-radius: 10px;
+  border-color: #171B2B;
+  padding: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.UserProfileContainer {
+  margin: 20px;
+}
+
+.UserProfile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px
+}
+
+.ProfilePicture {
+  margin-right: 20px; 
+}
+
+.UserInfo {
+  flex-grow: 1; 
+}
+
+.UserArticles {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  background-color: #171B2B;
+  color: #BCD6E5;
+  border-radius: 10px;
+}
+
 footer {
   display: flex;
   align-items: center;
@@ -56,7 +95,7 @@ footer {
 
 .social-icons {
   display: flex;
-  gap: 15px;
+  gap: 10px;
 }
 
 .social-icons a {
@@ -75,35 +114,4 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.comment-section {
-  border: solid;
-  border-radius: 10px;
-  border-color: #83A6B2;
-  padding: 5%;
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
-
-.UserProfileContainer {
-  margin: 20px; /* Adjust the margin as needed */
-}
-
-.UserProfile {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px; /* Add space between user details and articles */
-}
-
-.ProfilePicture {
-  margin-right: 20px; /* Add space between profile picture and user info */
-}
-
-.UserInfo {
-  flex-grow: 1; /* Allow user info to take remaining space */
-}
-
-.UserArticles {
-  margin-top: 100px; /* Add space between user details and articles */
 }

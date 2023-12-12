@@ -13,12 +13,11 @@ export default function ArticleListPage() {
 
   const getAllArticles = () => {
     const storedToken = localStorage.getItem("authToken");
-   
+
     axios
-      .get(
-      `${API_URL}/api/articles`,
-      { headers: { Authorization: `Bearer ${storedToken}` } }
-    )
+      .get(`${API_URL}/api/articles`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
       .then((response) => setArticles(response.data))
       .catch((error) => console.log(error));
   };
@@ -26,71 +25,63 @@ export default function ArticleListPage() {
   useEffect(() => {
     getAllArticles();
   }, []);
-  
-  // const handleLike = () => {
-  //   const storedToken = localStorage.getItem("authToken");
 
-  //   axios
-  //     .put(
-  //       `${API_URL}/api/articles/${articleId}/like`,
-  //       {},
-  //       {
-  //         headers: { Authorization: `Bearer ${storedToken}` },
-  //       }
-  //     )
-  //     .then((response) => {
-  //       setArticle(response.data);
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
+  const handleLike = (articleId) => {
+    const storedToken = localStorage.getItem("authToken");
 
-  // const handleUnlike = () => {
-  //   const storedToken = localStorage.getItem("authToken");
-  //   console.log("Unliking article with ID:", article._id);
+    axios
+      .put(
+        `${API_URL}/api/articles/${articleId}/like`,
+        {},
+        {
+          headers: { Authorization: `Bearer ${storedToken}` },
+        }
+      )
+      .then((response) => {
+        setArticles((prevArticles) =>
+          prevArticles.map((article) =>
+            article._id === articleId ? response.data : article
+          )
+        );
+      })
+      .catch((error) => console.log(error));
+  };
 
-  //   axios
-  //     .put(
-  //       `${API_URL}/api/articles/${articleId}/unlike`,
-  //       {},
-  //       {
-  //         headers: { Authorization: `Bearer ${storedToken}` },
-  //       }
-  //     )
-  //     .then((response) => {
-  //       setArticle(response.data);
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
+
+  const handleUnlike = (articleId) => {
+    const storedToken = localStorage.getItem("authToken");
+
+    axios
+      .put(
+        `${API_URL}/api/articles/${articleId}/unlike`,
+        {},
+        {
+          headers: { Authorization: `Bearer ${storedToken}` },
+        }
+      )
+      .then((response) => {
+        setArticles((prevArticles) =>
+          prevArticles.map((article) =>
+            article._id === articleId ? response.data : article
+          )
+        );
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
-<div className="container text-center my-4 p-4" style={{ backgroundColor: '#98CEE0'  }}>
+    <div className="container text-center my-4 p-4" style={{ backgroundColor: '#98CEE0', borderRadius: "10px", width: '70%' }}>
       <div className="ArticleListPage">
         <AddArticle refreshArticles={getAllArticles} />
-
+          <hr />
         {articles.map((article) => (
           <div key={article._id}>
             <ArticleCard {...article} />
-            <ArticleDetails article={article} /> 
-            {/* <button
-            className={`btn ${
-              article.likes && article.likes.length > 0
-                ? "btn-success"
-                : "btn-outline-success"
-            }`}
-            onClick={handleLike}
-          >
-            Like
-          </button>
-          <button
-            className={`btn ${
-              article.likes && article.likes.length === 0
-                ? "btn-danger"
-                : "btn-outline-danger"
-            }`}
-            onClick={handleUnlike}
-          >
-            Unlike
-          </button> */}
+            <ArticleDetails
+              article={article}
+              onLike={() => handleLike(article._id)}
+              onUnlike={() => handleUnlike(article._id)}
+            />
           </div>
         ))}
       </div>
@@ -203,3 +194,100 @@ export default function ArticleListPage() {
 //     </div>
 //   );
 // }
+
+
+
+// My Old Code
+
+
+// export default function ArticleListPage() {
+//   const [articles, setArticles] = useState([]);
+
+//   const getAllArticles = () => {
+//     const storedToken = localStorage.getItem("authToken");
+   
+//     axios
+//       .get(
+//       `${API_URL}/api/articles`,
+//       { headers: { Authorization: `Bearer ${storedToken}` } }
+//     )
+//       .then((response) => setArticles(response.data))
+//       .catch((error) => console.log(error));
+//   };
+
+//   useEffect(() => {
+//     getAllArticles();
+//   }, []);
+  
+//   // const handleLike = () => {
+//   //   const storedToken = localStorage.getItem("authToken");
+
+//   //   axios
+//   //     .put(
+//   //       `${API_URL}/api/articles/${articleId}/like`,
+//   //       {},
+//   //       {
+//   //         headers: { Authorization: `Bearer ${storedToken}` },
+//   //       }
+//   //     )
+//   //     .then((response) => {
+//   //       setArticle(response.data);
+//   //     })
+//   //     .catch((error) => console.log(error));
+//   // };
+
+//   // const handleUnlike = () => {
+//   //   const storedToken = localStorage.getItem("authToken");
+//   //   console.log("Unliking article with ID:", article._id);
+
+//   //   axios
+//   //     .put(
+//   //       `${API_URL}/api/articles/${articleId}/unlike`,
+//   //       {},
+//   //       {
+//   //         headers: { Authorization: `Bearer ${storedToken}` },
+//   //       }
+//   //     )
+//   //     .then((response) => {
+//   //       setArticle(response.data);
+//   //     })
+//   //     .catch((error) => console.log(error));
+//   // };
+
+//   return (
+// <div className="container text-center my-4 p-4" style={{ backgroundColor: '#98CEE0'  }}>
+//       <div className="ArticleListPage">
+//         <AddArticle refreshArticles={getAllArticles} />
+
+//         {articles.map((article) => (
+//           <div key={article._id}>
+//             <ArticleCard {...article} />
+//             <ArticleDetails article={article} /> 
+
+//             {/* <button
+//             className={`btn ${
+//               article.likes && article.likes.length > 0
+//                 ? "btn-success"
+//                 : "btn-outline-success"
+//             }`}
+//             onClick={handleLike}
+//           >
+//             Like
+//           </button>
+//           <button
+//             className={`btn ${
+//               article.likes && article.likes.length === 0
+//                 ? "btn-danger"
+//                 : "btn-outline-danger"
+//             }`}
+//             onClick={handleUnlike}
+//           >
+//             Unlike
+//           </button> */}
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+

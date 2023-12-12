@@ -83,7 +83,6 @@ export default function App() {
             </IsAnon>
           }
         />
-        {/* <Route exact path="/news" element={<IsAnon> <NewsPage /> </IsAnon>} /> */}
         <Route
           exact
           path="/profile"
@@ -95,6 +94,7 @@ export default function App() {
           }
         />
       </Routes>
+      {/* <Route exact path="/news" element={<IsAnon> <NewsPage /> </IsAnon>} /> */}
 
       <Footer />
     </div>

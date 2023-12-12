@@ -18,7 +18,7 @@ const CustomNavbar = () => {
 
   const welcomeTextStyle = {
     marginRight: "10px",
-  };
+  }; 
 
   return (
     // collapseOnSelect + eventKey="1" to collapse on link click
@@ -56,11 +56,11 @@ const CustomNavbar = () => {
               <Nav.Link eventKey="7" as={Link} to="/news">
                 News
               </Nav.Link>
-              <Nav.Link eventKey="8" as={Link} to="/signup">
-                Sign Up
-              </Nav.Link>
-              <Nav.Link eventKey="9" as={Link} to="/login">
+              <Nav.Link eventKey="8" as={Link} to="/login">
                 Login
+              </Nav.Link>
+              <Nav.Link eventKey="9" as={Link} to="/signup">
+                Sign Up
               </Nav.Link>
             </>
           )}

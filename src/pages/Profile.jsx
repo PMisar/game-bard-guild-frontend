@@ -14,7 +14,6 @@ export default function Profile() {
   useEffect(() => {
     const storedToken = localStorage.getItem("authToken");
 
-    // Fetch user information
     axios
       .get(`${API_URL}/api/profile`, {
         headers: { Authorization: `Bearer ${storedToken}` },
@@ -25,7 +24,6 @@ export default function Profile() {
       })
       .catch((error) => console.log(error));
 
-    // Fetch articles written by the user
     axios
       .get(`${API_URL}/api/articles`, {
         headers: { Authorization: `Bearer ${storedToken}` },
@@ -36,8 +34,20 @@ export default function Profile() {
       .catch((error) => console.log(error));
   }, []);
 
-  const handleDeleteUser = (userId) => {
-    // Implement user deletion logic here
+  const handleDeleteUser = () => {
+    const storedToken = localStorage.getItem("authToken");
+  
+    axios
+      .delete(`${API_URL}/api/profile`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then((response) => {
+        console.log(response.data);
+        alert("User deleted successfully");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   const formatDate = (timestamp) => {
@@ -45,7 +55,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="UserProfileContainer" style={{ margin: "0 10%" }}>
+    <div className="container text-center my-4 p-4" style={{ width: "70%" }}>
       {user && (
         <div className="UserProfile">
           <div className="ProfilePicture">
@@ -79,12 +89,4 @@ export default function Profile() {
       </div>
     </div>
   );
-}
-
-{
-  /* <h2>Your Articles</h2>
-      {userArticles.map((article) => (
-        <ArticleCard key={article._id} {...article} />
-      ))}
-    </div> */
 }

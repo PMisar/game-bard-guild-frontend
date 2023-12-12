@@ -1,8 +1,10 @@
 // src/components/AddArticle.jsx
 
 import React from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import axios from "axios";
+// import { Button } from "react-bootstrap";
+import CustomButton from "./Button";
 
 const API_URL = "http://localhost:5005";
 
@@ -81,7 +83,9 @@ export default function AddArticle(props) {
           </label>
         </Form.Group>
 
-        <div className="d-grid gap-2">
+        <CustomButton onClick={handleSubmit}>Share</CustomButton>
+        
+        {/* <div className="d-grid gap-2">
           <Button
             type="submit"
             variant="secondary"
@@ -89,7 +93,8 @@ export default function AddArticle(props) {
           >
             Share
           </Button>
-        </div>
+        </div> */}
+
       </Form>
     </div>
   );
