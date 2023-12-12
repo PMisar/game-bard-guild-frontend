@@ -82,6 +82,54 @@ export default function HomePage() {
         ></iframe>
       </div>
 
+      <div style={{ marginTop: '20px', maxWidth: '800px', margin: '0 auto' }}>
+        <iframe
+          width="100%"
+          height="515"
+          src="https://www.youtube.com/embed/Ek3I6_9c58E?si=uSoi4YuAk1nzhJni"
+          title="YouTube Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+
+      <div style={{ marginTop: '20px', maxWidth: '800px', margin: '0 auto' }}>
+        <iframe
+          width="100%"
+          height="515"
+          src="https://www.youtube.com/embed/basLDO2bj2k?si=1CQmNeXsAvrnxF6c"
+          title="YouTube Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+
+      <div style={{ marginTop: '20px', maxWidth: '800px', margin: '0 auto' }}>
+        <iframe
+          width="100%"
+          height="515"
+          src="https://www.youtube.com/embed/R2uW-9BKzuU?si=_a2j8P1zl-wXz_Ng"
+          title="YouTube Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+
+      <div style={{ marginTop: '20px', maxWidth: '800px', margin: '0 auto' }}>
+        <iframe
+          width="100%"
+          height="515"
+          src="https://www.youtube.com/embed/iX0eEZvCJcg?si=9k7aieqR_OE7PoNy"
+          title="YouTube Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+
     </div>
   );
 }

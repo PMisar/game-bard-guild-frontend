@@ -36,8 +36,16 @@ export default function Profile() {
       .catch((error) => console.log(error));
   }, []);
 
+  const handleDeleteUser = (userId) => {
+    // Implement user deletion logic here
+  };
+
+  const formatDate = (timestamp) => {
+    return new Date(timestamp).toLocaleDateString();
+  };
+
   return (
-    <div className="UserProfileContainer">
+    <div className="UserProfileContainer" style={{ margin: "0 10%" }}>
       {user && (
         <div className="UserProfile">
           <div className="ProfilePicture">
@@ -54,14 +62,15 @@ export default function Profile() {
             <hr />
             <p>Username: {user.name}</p>
             <p>Email: {user.email}</p>
+            <p>Joined: {user.createdAt && formatDate(user.createdAt)}</p>
 
             <Button variant="danger" onClick={() => handleDeleteUser(user._id)}>
-            Delete User
-          </Button>
+              Delete User
+            </Button>
           </div>
         </div>
       )}
-      
+
       <div className="UserArticles">
         <h2>Your Articles</h2>
         {userArticles.map((article) => (
@@ -72,8 +81,10 @@ export default function Profile() {
   );
 }
 
-{/* <h2>Your Articles</h2>
+{
+  /* <h2>Your Articles</h2>
       {userArticles.map((article) => (
         <ArticleCard key={article._id} {...article} />
       ))}
-    </div> */}
+    </div> */
+}

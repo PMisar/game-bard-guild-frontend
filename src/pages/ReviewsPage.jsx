@@ -48,8 +48,10 @@ const ReviewsPage = () => {
       )
       .map((review) => (
         <div key={review.id}> 
-          <h3>{review.title}</h3>
-          <p>{review.description}</p>
+          <h3>{review.publishedDate}</h3>
+          <p>{review.snippet}</p>
+          <p>{review.score}</p>
+
         </div>
       ))}
         </div>

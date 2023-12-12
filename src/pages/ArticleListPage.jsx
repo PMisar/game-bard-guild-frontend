@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import ArticleCard from "../components/ArticleCard";
 import AddArticle from "../components/AddArticle";
-import CommentSection from "../components/CommentSection";
 import ArticleDetails from "../components/ArticleDetails";
 
 const API_URL = "http://localhost:5005";

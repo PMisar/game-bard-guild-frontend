@@ -84,7 +84,6 @@
 
 // src/components/CommentSection.jsx
 
-
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 import axios from "axios";
@@ -145,7 +144,6 @@ export default function CommentSection({ articleId }) {
         comments.map((comment) => (
           <div key={comment._id}>
             <p>{comment.text}</p>
-            {/* Display other comment details if needed */}
           </div>
         ))}
 
@@ -170,7 +168,7 @@ export default function CommentSection({ articleId }) {
             type="submit"
             variant="secondary"
             style={{ backgroundColor: "#0D2A4A" }}
-            disabled={characterCount > maxCharacterLimit}
+            disabled={characterCount >= maxCharacterLimit}
           >
             Submit Comment
           </Button>
