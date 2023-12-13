@@ -11,7 +11,7 @@ export default function CommentSection({ articleId }) {
   const [comments, setComments] = React.useState([]);
   const [newComment, setNewComment] = React.useState("");
   const [characterCount, setCharacterCount] = React.useState(0);
-  const maxCharacterLimit = 300;
+  const maxCharacterLimit = 200;
 
   const getComments = () => {
     const storedToken = localStorage.getItem("authToken");
@@ -60,6 +60,7 @@ export default function CommentSection({ articleId }) {
         {comments &&
           comments.map((comment) => (
             <div key={comment._id}>
+              {/* <p>{comment.user.name}</p> */}
               <p>{comment.comment}</p>
             </div>
           ))}
@@ -79,8 +80,8 @@ export default function CommentSection({ articleId }) {
               Characters remaining: {maxCharacterLimit - characterCount}
             </small>
           </Form.Group>
-
-          <Button type="submit" disabled={characterCount >= maxCharacterLimit}>
+            
+          <Button type="submit" disabled={characterCount >= maxCharacterLimit} style={{ backgroundColor: '#C5C6C7', borderColor: '#C5C6C7', borderRadius: '50px', color: '#1F2833' }}>
             Submit Comment
           </Button>
         </Form>

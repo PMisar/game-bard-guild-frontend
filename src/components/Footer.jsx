@@ -7,7 +7,7 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 
 const Footer = () => {
   const handleScrollToTop = () => {
@@ -40,13 +40,12 @@ const Footer = () => {
         </a>
       </div>
       <div className="centered-content">
-        <Button
-          variant="outline-secondary"
-          className="back-to-top-button"
+        <button
+          className="footer-button"
           onClick={handleScrollToTop}
         >
           Back to Top
-        </Button>
+        </button>
       </div>
       <p className="centered-paragraph">Created by Pavel Misař</p>
     </footer>

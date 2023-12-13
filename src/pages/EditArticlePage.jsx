@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Button } from "react-bootstrap"; 
+// import { Button } from "react-bootstrap"; 
 
 const API_URL = "http://localhost:5005";
 
@@ -55,7 +55,7 @@ export default function EditArticlePage(props) {
   };
 
   return (
-    <div className="EditArticlePage d-flex flex-column align-items-center justify-content-center">
+    <div className="EditArticlePage d-flex flex-column align-items-center justify-content-center"  style={{paddingTop: '100px', paddingBottom: '100px'}}>
       <h3>Edit the Article</h3>
 
       <form onSubmit={handleFormSubmit} className="w-75">
@@ -76,26 +76,22 @@ export default function EditArticlePage(props) {
           className="form-control"
         />
 
-        <div className="d-grid gap-2 mt-3">
-          <Button
+          <button
+          className= 'articleDetailsButton'
             type="submit"
-            variant="secondary"
-            style={{ backgroundColor: "#0D2A4A" }}
+            style={{ backgroundColor: "#1F2833" }}
           >
             Update Article
-          </Button>
-        </div>
+          </button>
       </form>
 
-      <div className="d-grid gap-2 mt-3">
-        <Button
+        <button
+        className="delete-button"
           onClick={deleteArticle}
-          variant="secondary"
-          style={{ backgroundColor: "#0D2A4A" }}
+          style={{ backgroundColor: "#1F2833" }}
         >
           Delete Article
-        </Button>
-      </div>
+        </button>
     </div>
   );
 }

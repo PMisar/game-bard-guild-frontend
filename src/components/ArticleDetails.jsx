@@ -27,8 +27,8 @@ const ArticleDetails = ({ article, onLike, onUnlike }) => {
             </Col>
           </Row>
 
-          <button onClick={onLike}>Like</button>
-          <button onClick={onUnlike}>Unlike</button>
+          <button className='like-button' onClick={onLike}>Like</button>
+          <button className='unlike-button' onClick={onUnlike}>Unlike</button>
 
           {article.comments && article.comments.length > 0 && (
             <Link to={`/articles/${article._id}/comments`}>View Comments</Link>

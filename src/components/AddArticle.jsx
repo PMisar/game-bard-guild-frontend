@@ -38,7 +38,6 @@ export default function AddArticle(props) {
       .catch((error) => console.log(error));
   };
 
-  console.log(image);
   return (
     <div
       className="AddArticle d-flex flex-wrap justify-content-center align-items-center"
@@ -74,6 +73,7 @@ export default function AddArticle(props) {
           />
         </Form.Group>
 
+        <Form.Group>
         <label>
           Image:
           <input
@@ -83,7 +83,8 @@ export default function AddArticle(props) {
             onChange={(e) => setImage(e.target.files[0])}
           />
         </label>
-
+        </Form.Group>
+        
         <CustomButton onClick={handleSubmit}>Share</CustomButton>
       </Form>
     </div>

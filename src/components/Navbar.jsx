@@ -1,9 +1,10 @@
 // src/components/Navbar.jsx
 
-import React from "react";
+// import React from "react";
+import React, { useContext } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+// import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
 const CustomNavbar = () => {
@@ -33,7 +34,7 @@ const CustomNavbar = () => {
           alt="GameBard Guild"
         />
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ border: 'none' }} />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="m-auto">
           {isLoggedIn ? (

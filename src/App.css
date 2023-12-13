@@ -1,13 +1,12 @@
 /* App.css */
 /* 
-#0B0C10 dark text color
-#1F2833 navbar and footer 
+#0B0C10 navbar and footer
+#1F2833 background color
 #C5C6C7 text color
 #66FCF1 neon color
+#00C6F8 navbar neon
 #45A29E article list color
-#BCD6E5 background color
 #1F2833 background color
-#00C6F8 Vivid sky blue
 font-family: 'Inconsolata', monospace;
 font-family: 'Oswald', sans-serif;
 */
@@ -16,13 +15,15 @@ font-family: 'Oswald', sans-serif;
   text-align: center;
   font-family: "Inconsolata", monospace;
   background-color: #1f2833;
-  color: #C5C6C7;
+  color: #c5c6c7;
 }
 
+/* NAVBAR */
 .custom-navbar .navbar-brand {
   margin-left: 10px;
 }
-/* Navbar buttons */
+
+/* NAVBAR BUTTONS */
 .custom-link {
   position: relative;
   display: inline-block;
@@ -45,30 +46,6 @@ font-family: 'Oswald', sans-serif;
   color: #c5c6c7;
   box-shadow: 0 0 10px #00c6f8, 0 0 20px #00c6f8, 0 0 40px #00c6f8,
     0 0 80px #00c6f8;
-}
-
-.delete-button {
-  margin-top: 20px;
-  position: relative;
-  display: inline-block;
-  font-size: 1em;
-  letter-spacing: 0.1em;
-  color: #f31f1f;
-  background-color: #1f2833;
-  text-decoration: none;
-  font-family: "Inconsolata", monospace;
-  text-transform: uppercase;
-  border: 1px solid;
-  border-radius: 50px;
-  padding: 5px 20px;
-  z-index: 1;
-  overflow: hidden;
-  transition: color 2s, box-shadow 1s;
-}
-
-.delete-button:hover {
-  color: #f31f1f;
-  box-shadow: 0 0 10px #f31f1f, 0 0 20px #f31f1f, 0 0 40px #f31f1f;
 }
 
 .home-image-container {
@@ -104,28 +81,23 @@ font-family: 'Oswald', sans-serif;
 }
 
 .comment-section {
-  border: solid;
+  border: solid 1px;
   border-radius: 10px;
   border-color: #c5c6c7;
   padding: 5%;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin: 20px 0px;
 }
 
-.UserProfileContainer {
+/* .UserProfileContainer {
   margin: 20px;
-}
+} */
 
-.UserProfile {
+/* .UserProfile {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
   margin-top: 20px;
-}
-
-.ProfilePicture {
-  margin-right: 20px;
-}
+} */
 
 .UserInfo {
   flex-grow: 1;
@@ -139,6 +111,7 @@ font-family: 'Oswald', sans-serif;
   border-radius: 10px;
 }
 
+/* FOOTER */
 footer {
   display: flex;
   align-items: center;
@@ -150,7 +123,7 @@ footer {
 
 .social-icons {
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 
 .social-icons a {
@@ -164,9 +137,126 @@ footer {
   margin: 0;
 }
 
-.centered-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.footer-button {
+  position: relative;
+  display: inline-block;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  color: #c5c6c7;
+  background-color: #0b0c10;
+  border: 1px solid;
+  border-radius: 50px;
+  padding: 5px 20px;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 1s, box-shadow 1s;
+}
+
+.footer-button:hover {
+  color: #c5c6c7;
+  box-shadow: 0 0 10px #00c6f8, 0 0 20px #00c6f8, 0 0 40px #00c6f8,
+    0 0 80px #00c6f8;
+}
+
+/* LIKE BUTTON */
+.like-button {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
+  color: #c5c6c7;
+  text-decoration: none;
+  font-family: "Inconsolata", monospace;
+  background-color: #1f2833;
+  text-transform: uppercase;
+  margin: 20px;
+  border: 1px solid;
+  border-radius: 50px;
+  padding: 5px 20px;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 1s, box-shadow 1s;
+}
+
+.like-button:hover {
+  color: #c5c6c7;
+  box-shadow: 0 0 10px #1edd31, 0 0 20px #1edd31, 0 0 40px #1edd31,
+    0 0 80px #1edd31;
+}
+
+/* UNLIKE BUTTON */
+.unlike-button {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
+  color: #c5c6c7;
+  text-decoration: none;
+  font-family: "Inconsolata", monospace;
+  background-color: #1f2833;
+  text-transform: uppercase;
+  margin: 20px;
+  border: 1px solid;
+  border-radius: 50px;
+  padding: 5px 20px;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 1s, box-shadow 1s;
+}
+
+.unlike-button:hover {
+  color: #c5c6c7;
+  box-shadow: 0 0 10px #f31f1f, 0 0 20px #f31f1f, 0 0 40px #f31f1f,
+    0 0 80px #f31f1f;
+}
+
+/* DELETE BUTTON */
+.delete-button {
+  margin-top: 20px;
+  position: relative;
+  display: inline-block;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  color: #f31f1f;
+  background-color: #1f2833;
+  text-decoration: none;
+  font-family: "Inconsolata", monospace;
+  text-transform: uppercase;
+  border: 1px solid;
+  border-radius: 50px;
+  padding: 5px 20px;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 2s, box-shadow 1s;
+}
+
+.delete-button:hover {
+  color: #f31f1f;
+  box-shadow: 0 0 10px #f31f1f, 0 0 20px #f31f1f, 0 0 40px #f31f1f;
+}
+
+/* ARTICLE EDIT BUTTONS */
+.articleDetailsButton {
+  position: relative;
+  display: inline-block;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  color: #c5c6c7;
+  text-decoration: none;
+  margin-top: 30px;
+  font-family: "Inconsolata", monospace;
+  background-color: #1f2833;
+  text-transform: uppercase;
+  border: 1px solid;
+  border-radius: 50px;
+  padding: 5px 20px;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 1s, box-shadow 1s;
+}
+
+.articleDetailsButton:hover {
+  color: #c5c6c7;
+  box-shadow: 0 0 10px #00c6f8, 0 0 20px #00c6f8, 0 0 40px #00c6f8,
+    0 0 80px #00c6f8;
 }

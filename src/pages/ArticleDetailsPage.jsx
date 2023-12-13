@@ -8,7 +8,6 @@ import ArticleDetails from "../components/ArticleDetails";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-
 const API_URL = "http://localhost:5005";
 
 export default function ArticleDetailsPage(props) {
@@ -75,7 +74,7 @@ export default function ArticleDetailsPage(props) {
   };
 
   return (
-    <div className="ArticleDetails" style={{ padding: '10%', margin: '20px' }}>
+    <div className="ArticleDetails" style={{ padding: "10%", margin: "20px" }}>
       {article && (
         <>
           <h1>{article.title}</h1>
@@ -96,24 +95,10 @@ export default function ArticleDetailsPage(props) {
             </Col>
           </Row>
 
-          <button
-            className={`btn ${
-              article.likes && article.likes.length > 0
-                ? "btn-success"
-                : "btn-outline-success"
-            }`}
-            onClick={handleLike}
-          >
+          <button className="like-button" onClick={handleLike}>
             Like
           </button>
-          <button
-            className={`btn ${
-              article.likes && article.likes.length === 0
-                ? "btn-danger"
-                : "btn-outline-danger"
-            }`}
-            onClick={handleUnlike}
-          >
+          <button className="unlike-button" onClick={handleUnlike}>
             Unlike
           </button>
 
@@ -128,8 +113,12 @@ export default function ArticleDetailsPage(props) {
 
       <Link to="/articles">
         <button
-          variant="secondary"
-          style={{ backgroundColor: "#0D2A4A", color: "white" }}
+          className="articleDetailsButton"
+          style={{
+            backgroundColor: "#0D2A4A",
+            color: "white",
+            textDecoration: "none",
+          }}
         >
           Back to Articles
         </button>{" "}
@@ -137,8 +126,12 @@ export default function ArticleDetailsPage(props) {
 
       <Link to={`/articles/edit/${articleId}`}>
         <button
-          variant="secondary"
-          style={{ backgroundColor: "#0D2A4A", color: "white" }}
+          className="articleDetailsButton"
+          style={{
+            backgroundColor: "#0D2A4A",
+            color: "white",
+            textDecoration: "none",
+          }}
         >
           Edit Article
         </button>
