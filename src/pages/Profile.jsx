@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ArticleCard from "../components/ArticleCard";
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 
 const API_URL = "http://localhost:5005";
 
@@ -36,7 +36,7 @@ export default function Profile() {
 
   const handleDeleteUser = () => {
     const storedToken = localStorage.getItem("authToken");
-  
+
     axios
       .delete(`${API_URL}/api/profile`, {
         headers: { Authorization: `Bearer ${storedToken}` },
@@ -55,7 +55,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="container text-center my-4 p-4" style={{ width: "70%" }}>
+    <div className="container text-center my-4 p-4" style={{ width: "70%", color:"#C5C6C7" }}>
       {user && (
         <div className="UserProfile">
           <div className="ProfilePicture">
@@ -74,18 +74,28 @@ export default function Profile() {
             <p>Email: {user.email}</p>
             <p>Joined: {user.createdAt && formatDate(user.createdAt)}</p>
 
-            <Button variant="danger" onClick={() => handleDeleteUser(user._id)}>
+            <button className="delete-button" onClick={handleDeleteUser}>
               Delete User
-            </Button>
+            </button>
           </div>
         </div>
       )}
 
-      <div className="UserArticles">
+      {/* <div className="UserArticles">
         <h2>Your Articles</h2>
         {userArticles.map((article) => (
           <ArticleCard key={article._id} {...article} />
         ))}
+      </div> */}
+      <div className="UserArticles">
+        <h2>Your Articles</h2>
+        {userArticles.length > 0 ? (
+          userArticles.map((article) => (
+            <ArticleCard key={article._id} {...article} />
+          ))
+        ) : (
+          <p>You haven't published any articles yet.</p>
+        )}
       </div>
     </div>
   );

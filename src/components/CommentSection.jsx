@@ -3,6 +3,7 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 import axios from "axios";
+// import CustomButton from "./Button";
 
 const API_URL = "http://localhost:5005";
 
@@ -16,7 +17,7 @@ export default function CommentSection({ articleId }) {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-    .get(`${API_URL}/api/articles/${articleId}/comments`, {
+      .get(`${API_URL}/api/articles/${articleId}/comments`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
@@ -32,8 +33,8 @@ export default function CommentSection({ articleId }) {
 
     axios
       .post(
-        `${API_URL}/api/comments`,
-        { text: newComment, articleId },
+        `${API_URL}/api/articles/${articleId}/comments`,
+        { comment: newComment, articleId },
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
       .then((response) => {
@@ -55,43 +56,35 @@ export default function CommentSection({ articleId }) {
 
   return (
     <div className="comment-section">
-    <div className="CommentSection d-flex flex-wrap justify-content-center align-items-center">
-      {comments &&
-        comments.map((comment) => (
-          <div key={comment._id}>
-            <p>{comment.text}</p>
-          </div>
-        ))}
+      <div className="CommentSection d-flex flex-wrap justify-content-center align-items-center">
+        {comments &&
+          comments.map((comment) => (
+            <div key={comment._id}>
+              <p>{comment.comment}</p>
+            </div>
+          ))}
 
-      <Form onSubmit={handleCommentSubmit} className="w-100">
-        <Form.Group className="mb-3">
-          <Form.Control
-            as="textarea"
-            id="newComment"
-            name="newComment"
-            value={newComment}
-            onChange={handleCommentChange}
-            placeholder="Add a comment..."
-            style={{ backgroundColor: '#BCD6E5' }}
-          />
-          <small className="text-muted">
-            Characters remaining: {maxCharacterLimit - characterCount}
-          </small>
-        </Form.Group>
+        <Form onSubmit={handleCommentSubmit} className="w-100">
+          <Form.Group className="mb-3">
+            <Form.Control
+              as="textarea"
+              id="newComment"
+              name="newComment"
+              value={newComment}
+              onChange={handleCommentChange}
+              placeholder="Add a comment..."
+              style={{ backgroundColor: "#BCD6E5" }}
+            />
+            <small className="text-muted" style={{ color: '#C5C6C7'}}>
+              Characters remaining: {maxCharacterLimit - characterCount}
+            </small>
+          </Form.Group>
 
-        <div className="d-grid gap-2">
-          <Button
-            type="submit"
-            variant="secondary"
-            style={{ backgroundColor: "#0D2A4A" }}
-            disabled={characterCount >= maxCharacterLimit}
-          >
+          <Button type="submit" disabled={characterCount >= maxCharacterLimit}>
             Submit Comment
           </Button>
-        </div>
-      </Form>
-    </div>
+        </Form>
+      </div>
     </div>
   );
 }
-

@@ -9,7 +9,8 @@ import { AuthContext } from "../context/auth.context";
 const CustomNavbar = () => {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   const navbarStyle = {
-    backgroundColor: "#171B2B",
+    backgroundColor: "#0B0C10",
+    color: "#C5C6C7"
   };
 
   const brandStyle = {
@@ -37,29 +38,29 @@ const CustomNavbar = () => {
         <Nav className="m-auto">
           {isLoggedIn ? (
             <>
-              <Nav.Link eventKey="2" as={Link} to="/news">
+              {/* <Nav.Link eventKey="2" as={Link} to="/news" className="custom-link">
               News
-            </Nav.Link>
-              <Nav.Link eventKey="3" as={Link} to="/reviews">
+            </Nav.Link> */}
+              <Nav.Link eventKey="3" as={Link} to="/reviews" className="custom-link">
                 Reviews
               </Nav.Link>
-              <Nav.Link eventKey="4" as={Link} to="/articles">
+              <Nav.Link eventKey="4" as={Link} to="/articles" className="custom-link">
                 Articles
               </Nav.Link>
-              <Nav.Link eventKey="5" as={Link} to="/profile">
+              <Nav.Link eventKey="5" as={Link} to="/profile" className="custom-link">
                 Profile
               </Nav.Link>
-              <Nav.Link eventKey="6" onClick={logOutUser}>Logout</Nav.Link>
+              <Nav.Link eventKey="6" onClick={logOutUser} className="custom-link">Logout</Nav.Link>
             </>
           ) : (
             <>
-              <Nav.Link eventKey="7" as={Link} to="/news">
+              {/* <Nav.Link eventKey="7" as={Link} to="/news" className="custom-link">
                 News
-              </Nav.Link>
-              <Nav.Link eventKey="8" as={Link} to="/login">
+              </Nav.Link> */}
+              <Nav.Link eventKey="8" as={Link} to="/login" className="custom-link">
                 Login
               </Nav.Link>
-              <Nav.Link eventKey="9" as={Link} to="/signup">
+              <Nav.Link eventKey="9" as={Link} to="/signup" className="custom-link">
                 Sign Up
               </Nav.Link>
             </>

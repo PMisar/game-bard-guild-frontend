@@ -10,17 +10,18 @@ const ReviewsPage = () => {
   const [reviews, setReviews] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-
   const { authToken } = useContext(AuthContext);
 
-  useEffect(()=> {
+  useEffect(() => {
     const storedToken = localStorage.getItem("authToken");
 
     const fetchReviews = async () => {
       try {
-        const response = await axios.get(`${API_URL}/api/reviews`, {
+        console.log(reviews.snippet);
+        const response = await axios.get(`${API_URL}/api/game/hall-of-fame`, {
           headers: { Authorization: `Bearer ${storedToken}` },
         });
+        console.log(response.data);
         setReviews(response.data);
       } catch (error) {
         console.error("Error fetching reviews:", error);
@@ -28,7 +29,9 @@ const ReviewsPage = () => {
     };
 
     fetchReviews();
-  }, [])
+  }, []);
+
+  if (!reviews.length) return <div>loading...</div>;
 
   return (
     <div className="ReviewsPage">
@@ -43,16 +46,16 @@ const ReviewsPage = () => {
       </div>
 
       {reviews
-  .filter((review) =>
-    review.name && review.name.toLowerCase().includes(searchTerm.toLowerCase())
-  )
-  .map((review) => (
-    <div key={review.game.id}>
-      <h3>{review.publishedDate}</h3>
-      <p>{review.snippet}</p>
-      <p>{review.score}</p>
-    </div>
-  ))}
+        .filter(
+          (review) =>
+            review.name &&
+            review.name.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+        .map((review) => (
+          <div key={review.id}>
+            <h3>{review.name}</h3>
+          </div>
+        ))}
     </div>
   );
 };

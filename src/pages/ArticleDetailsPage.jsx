@@ -31,6 +31,7 @@ export default function ArticleDetailsPage(props) {
 
   const handleLike = () => {
     const storedToken = localStorage.getItem("authToken");
+    console.log("Liking article with ID:", article.id);
 
     axios
       .put(
@@ -48,7 +49,7 @@ export default function ArticleDetailsPage(props) {
 
   const handleUnlike = () => {
     const storedToken = localStorage.getItem("authToken");
-    console.log("Unliking article with ID:", article._id);
+    console.log("Unliking article with ID:", article.id);
 
     axios
       .delete(
