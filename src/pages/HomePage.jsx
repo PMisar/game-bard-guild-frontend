@@ -129,7 +129,6 @@ export default function HomePage() {
           allowFullScreen
         ></iframe>
       </div>
-
     </div>
   );
 }

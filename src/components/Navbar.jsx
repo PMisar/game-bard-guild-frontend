@@ -1,10 +1,8 @@
 // src/components/Navbar.jsx
 
-// import React from "react";
 import React, { useContext } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
-// import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
 const CustomNavbar = () => {

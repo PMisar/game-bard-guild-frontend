@@ -1,28 +1,11 @@
-// // Button.jsx
-// import React from "react";
-// import styles from "./Button.module.css"; // Import the module style
-
-// const CustomButton = ({ onClick, children }) => {
-//   return (
-//     <a href="" className={styles.button} onClick={onClick}>
-//       <span></span>
-//       <span></span>
-//       <span></span>
-//       <span></span>
-//       {children}
-//     </a>
-//   );
-// };
-
-// export default CustomButton;
-
+// Button.jsx
 
 import React from "react";
-import styles from "./Button.module.css"; // Import the module style
+import styles from "./Button.module.css"; 
 
 const CustomButton = ({ onClick, children }) => {
   const handleClick = (event) => {
-    event.preventDefault(); // Prevent the default behavior
+    event.preventDefault(); 
     if (onClick) {
       onClick(event);
     }
@@ -40,3 +23,20 @@ const CustomButton = ({ onClick, children }) => {
 };
 
 export default CustomButton;
+
+// import React from "react";
+// import styles from "./Button.module.css"; // Import the module style
+
+// const CustomButton = ({ onClick, children }) => {
+//   return (
+//     <a href="" className={styles.button} onClick={onClick}>
+//       <span></span>
+//       <span></span>
+//       <span></span>
+//       <span></span>
+//       {children}
+//     </a>
+//   );
+// };
+
+// export default CustomButton;

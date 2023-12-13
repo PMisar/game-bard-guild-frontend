@@ -102,7 +102,6 @@ export default function ArticleDetailsPage(props) {
             Unlike
           </button>
 
-          {/* Only show the "View Comments" link if there are comments */}
           {article.comments && article.comments.length > 0 && (
             <Link to={`/articles/${articleId}/comments`}>View Comments</Link>
           )}

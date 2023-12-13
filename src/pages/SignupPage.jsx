@@ -25,7 +25,7 @@ export default function SignupPage() {
     axios
       .post(`${API_URL}/auth/signup`, requestBody)
       .then(() => {
-        navigate('/login');
+        navigate("/login");
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
@@ -34,30 +34,25 @@ export default function SignupPage() {
   };
 
   const formStyle = {
-    maxWidth: '400px',
-    margin: 'auto',
-    padding: '20px',
-    textAlign: 'center',
+    maxWidth: "400px",
+    margin: "auto",
+    padding: "20px",
+    textAlign: "center",
   };
 
   const inputStyle = {
-    width: '100%',
-    marginTop: '10px',
-  };
-
-  const buttonStyle = {
-    width: '100%',
-    marginTop: '10px',
+    width: "100%",
+    marginTop: "10px",
   };
 
   const errorStyle = {
-    color: 'red',
-    marginTop: '10px',
+    color: "red",
+    marginTop: "10px",
   };
 
   const linkStyle = {
-    display: 'block',
-    marginTop: '10px',
+    display: "block",
+    marginTop: "10px",
   };
 
   return (
@@ -66,10 +61,22 @@ export default function SignupPage() {
 
       <form onSubmit={handleSignupSubmit}>
         <label>Nickname:</label>
-        <input type="text" name="name" value={name} onChange={handleName} style={inputStyle} />
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={handleName}
+          style={inputStyle}
+        />
 
         <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} style={inputStyle} />
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleEmail}
+          style={inputStyle}
+        />
 
         <label>Password:</label>
         <input
@@ -80,14 +87,16 @@ export default function SignupPage() {
           style={inputStyle}
         />
 
-        <button type="submit" style={buttonStyle}>
+        <button className="articleDetailsButton" type="submit">
           Sign Up
         </button>
       </form>
 
       {errorMessage && <p style={errorStyle}>{errorMessage}</p>}
 
-      <p style={linkStyle}>Already have an account? <Link to="/login">Login</Link></p>
+      <p style={linkStyle}>
+        Already have an account? <Link to="/login"  style={{ textDecoration: "none" }}>Login</Link>
+      </p>
     </div>
   );
 }

@@ -70,7 +70,7 @@ export default function ArticleListPage() {
   };
 
   return (
-    <div className="container text-center my-4 p-4" style={{ border: 'solid 1px', borderRadius: "10px", backgroundColor: '#1F2833', width: '70%' }}>
+    <div className="container text-center my-4 p-4" style={{ border: 'solid 1px', borderColor:'#00C6F8', borderRadius: "10px", backgroundColor: '#1F2833', width: '70%' }}>
       <div className="ArticleListPage">
         <AddArticle refreshArticles={getAllArticles} />
           <hr />

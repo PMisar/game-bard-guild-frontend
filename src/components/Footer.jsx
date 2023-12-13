@@ -7,7 +7,6 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-// import Button from "react-bootstrap/Button";
 
 const Footer = () => {
   const handleScrollToTop = () => {
