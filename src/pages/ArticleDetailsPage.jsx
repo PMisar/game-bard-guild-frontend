@@ -10,7 +10,7 @@ import Col from "react-bootstrap/Col";
 
 const API_URL = "http://localhost:5005";
 
-export default function ArticleDetailsPage(props) {
+export default function ArticleDetailsPage() {
   const [article, setArticle] = useState(null);
   const { articleId } = useParams();
 
@@ -30,7 +30,6 @@ export default function ArticleDetailsPage(props) {
 
   const handleLike = () => {
     const storedToken = localStorage.getItem("authToken");
-    console.log("Liking article with ID:", article.id);
 
     axios
       .put(
@@ -48,7 +47,6 @@ export default function ArticleDetailsPage(props) {
 
   const handleUnlike = () => {
     const storedToken = localStorage.getItem("authToken");
-    console.log("Unliking article with ID:", article.id);
 
     axios
       .delete(
@@ -78,9 +76,9 @@ export default function ArticleDetailsPage(props) {
       {article && (
         <>
           <h1>{article.title}</h1>
+          <img src={article.imageUrl} style={{ width: '100%', paddingTop: '30px', paddingBottom: '30px'}} />
           <p>{article.description}</p>
 
-          {article.image && <img src={article.image} alt="Article" />}
 
           <Row>
             <Col>

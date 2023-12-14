@@ -8,9 +8,8 @@ export default function HomePage() {
     <div>
       <HomeImage />
 
-      <h3 className="trailersText"> Best New Video Game Trailers Of 2023
- </h3>
-      <div style={{ marginTop: '20px', maxWidth: '800px', margin: '0 auto' }}>
+      <h3 className="trailersText"> Best New Video Game Trailers Of 2023</h3>
+      <div style={{ marginTop: "20px", maxWidth: "800px", margin: "0 auto" }}>
         <iframe
           width="100%"
           height="515"
@@ -22,7 +21,7 @@ export default function HomePage() {
         ></iframe>
       </div>
 
-      <div style={{ marginTop: '20px', maxWidth: '800px', margin: '0 auto' }}>
+      <div style={{ marginTop: "20px", maxWidth: "800px", margin: "0 auto" }}>
         <iframe
           width="100%"
           height="515"
@@ -34,7 +33,7 @@ export default function HomePage() {
         ></iframe>
       </div>
 
-      <div style={{ marginTop: '20px', maxWidth: '800px', margin: '0 auto' }}>
+      <div style={{ marginTop: "20px", maxWidth: "800px", margin: "0 auto" }}>
         <iframe
           width="100%"
           height="515"
@@ -46,7 +45,7 @@ export default function HomePage() {
         ></iframe>
       </div>
 
-      <div style={{ marginTop: '20px', maxWidth: '800px', margin: '0 auto' }}>
+      <div style={{ marginTop: "20px", maxWidth: "800px", margin: "0 auto" }}>
         <iframe
           width="100%"
           height="515"
@@ -58,7 +57,7 @@ export default function HomePage() {
         ></iframe>
       </div>
 
-      <div style={{ marginTop: '20px', maxWidth: '800px', margin: '0 auto' }}>
+      <div style={{ marginTop: "20px", maxWidth: "800px", margin: "0 auto" }}>
         <iframe
           width="100%"
           height="515"
@@ -70,7 +69,7 @@ export default function HomePage() {
         ></iframe>
       </div>
 
-      <div style={{ marginTop: '20px', maxWidth: '800px', margin: '0 auto' }}>
+      <div style={{ marginTop: "20px", maxWidth: "800px", margin: "0 auto" }}>
         <iframe
           width="100%"
           height="515"
@@ -82,7 +81,7 @@ export default function HomePage() {
         ></iframe>
       </div>
 
-      <div style={{ marginTop: '20px', maxWidth: '800px', margin: '0 auto' }}>
+      <div style={{ marginTop: "20px", maxWidth: "800px", margin: "0 auto" }}>
         <iframe
           width="100%"
           height="515"
@@ -94,7 +93,7 @@ export default function HomePage() {
         ></iframe>
       </div>
 
-      <div style={{ marginTop: '20px', maxWidth: '800px', margin: '0 auto' }}>
+      <div style={{ marginTop: "20px", maxWidth: "800px", margin: "0 auto" }}>
         <iframe
           width="100%"
           height="515"
@@ -106,7 +105,7 @@ export default function HomePage() {
         ></iframe>
       </div>
 
-      <div style={{ marginTop: '20px', maxWidth: '800px', margin: '0 auto' }}>
+      <div style={{ marginTop: "20px", maxWidth: "800px", margin: "0 auto" }}>
         <iframe
           width="100%"
           height="515"
@@ -118,7 +117,7 @@ export default function HomePage() {
         ></iframe>
       </div>
 
-      <div style={{ marginTop: '20px', maxWidth: '800px', margin: '0 auto' }}>
+      <div style={{ marginTop: "20px", maxWidth: "800px", margin: "0 auto" }}>
         <iframe
           width="100%"
           height="515"

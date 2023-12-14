@@ -12,10 +12,13 @@ font-family: 'Oswald', sans-serif;
 */
 
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   font-family: "Inconsolata", monospace;
   background-color: #1f2833;
   color: #c5c6c7;
+  min-height: 100vh;
 }
 
 /* NAVBAR */
@@ -124,15 +127,10 @@ font-family: 'Oswald', sans-serif;
   border-radius: 10px;
 }
 
-.page-content {
-  /* display: flex; */
-  flex-direction: column;
-  height: 100%;
-}
-
 /* FOOTER */
 footer {
   display: flex;
+  margin-top: auto;
   align-items: center;
   justify-content: space-between;
   padding: 20px;

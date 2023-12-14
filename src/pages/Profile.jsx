@@ -1,15 +1,16 @@
 // src/pages/Profile.jsx
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import ArticleCard from "../components/ArticleCard";
-// import { Button } from "react-bootstrap";
+import { AuthContext } from "../context/auth.context";
 
 const API_URL = "http://localhost:5005";
 
 export default function Profile() {
   const [user, setUser] = useState(null);
   const [userArticles, setUserArticles] = useState([]);
+  const { logOutUser } = useContext(AuthContext)
 
   useEffect(() => {
     const storedToken = localStorage.getItem("authToken");
@@ -42,8 +43,9 @@ export default function Profile() {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         alert("User deleted successfully");
+        logOutUser()
       })
       .catch((error) => {
         console.error(error);

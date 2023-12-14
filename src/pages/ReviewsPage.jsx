@@ -17,7 +17,6 @@ const ReviewsPage = () => {
 
     const fetchReviews = async () => {
       try {
-        console.log(reviews.snippet);
         const response = await axios.get(`${API_URL}/api/game/hall-of-fame`, {
           headers: { Authorization: `Bearer ${storedToken}` },
         });
@@ -31,7 +30,29 @@ const ReviewsPage = () => {
     fetchReviews();
   }, []);
 
-  if (!reviews.length) return <div>loading...</div>;
+  // useEffect(() => {
+  //   const storedToken = localStorage.getItem("authToken");
+
+  //   const fetchReviews = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `${API_URL}/api/game/search?criteria=${searchTerm}`,
+  //         {
+  //           headers: { Authorization: `Bearer ${storedToken}` },
+  //         }
+  //       );
+
+  //       console.log(response.data);
+  //       setReviews(response.data);
+  //     } catch (error) {
+  //       console.error("Error fetching reviews:", error);
+  //     }
+  //   };
+
+  //   fetchReviews();
+  // }, [searchTerm]);
+
+  if (!reviews.length) return <div>Loading...</div>;
 
   return (
     <div className="ReviewsPage">
@@ -54,6 +75,9 @@ const ReviewsPage = () => {
         .map((review) => (
           <div key={review.id}>
             <h3>{review.name}</h3>
+            <p>Release date: {review.firstReleaseDate}</p>
+            <p>Tier: {review.tier}</p>
+            <p>Critic score: {review.topCriticScore}</p>
           </div>
         ))}
     </div>

@@ -14,7 +14,7 @@ const ArticleDetails = ({ article, onLike, onUnlike }) => {
     <div className="ArticleDetails" style={{ padding: '10%' }}>
       {article && (
         <>
-          {article.image && <img src={article.image} alt="Article" />}
+          {/* {article.image && <img src={article.image} alt="Article" />} */}
 
           <Row>
             <Col>
