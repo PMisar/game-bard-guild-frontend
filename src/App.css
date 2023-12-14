@@ -104,16 +104,9 @@ font-family: 'Oswald', sans-serif;
   justify-content: center;
 }
 
-/* .UserProfileContainer {
-  margin: 20px;
-} */
-
-/* .UserProfile {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  margin-top: 20px;
-} */
+.ReviewsPage {
+  padding: 20px;
+}
 
 .UserInfo {
   flex-grow: 1;
@@ -184,8 +177,8 @@ footer {
 
 .footer-button:hover {
   color: #c5c6c7;
-  box-shadow: 0 0 10px #00c6f8, 0 0 20px #00c6f8, 0 0 40px #00c6f8,
-    0 0 80px #00c6f8;
+  box-shadow: 0 0 10px #5f7277, 0 0 20px #5f7277, 0 0 40px #5f7277,
+    0 0 80px #5f7277;
 }
 
 /* LIKE BUTTON */

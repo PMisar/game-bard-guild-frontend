@@ -54,43 +54,58 @@ export default function EditArticlePage(props) {
   };
 
   return (
-    <div className="EditArticlePage d-flex flex-column align-items-center justify-content-center"  style={{paddingTop: '100px', paddingBottom: '100px'}}>
+    <div
+      className="EditArticlePage d-flex flex-column align-items-center justify-content-center"
+      style={{ paddingTop: "100px", paddingBottom: "100px" }}
+    >
       <h3>Edit the Article</h3>
 
       <form onSubmit={handleFormSubmit} className="w-75">
-        <label>Title:</label>
         <input
           type="text"
           name="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           className="form-control"
+          placeholder="Enter the title"
+          style={{ backgroundColor: "#BCD6E5", marginTop: "30px" }}
         />
 
-        <label>Description:</label>
         <textarea
           name="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           className="form-control"
+          placeholder="Enter the description"
+          style={{ backgroundColor: "#BCD6E5", marginTop: "30px" }}
         />
 
-          <button
-          className= 'articleDetailsButton'
-            type="submit"
-            style={{ backgroundColor: "#1F2833" }}
-          >
-            Update Article
-          </button>
-      </form>
+        {/* <label>
+          Image:
+          <input
+            type="file"
+            name="image"
+            className="form-control-file"
+            onChange={(e) => setImage(e.target.files[0])}
+          />
+        </label> */}
 
         <button
-        className="delete-button"
-          onClick={deleteArticle}
+          className="articleDetailsButton"
+          type="submit"
           style={{ backgroundColor: "#1F2833" }}
         >
-          Delete Article
+          Update Article
         </button>
+      </form>
+
+      <button
+        className="delete-button"
+        onClick={deleteArticle}
+        style={{ backgroundColor: "#1F2833" }}
+      >
+        Delete Article
+      </button>
     </div>
   );
 }

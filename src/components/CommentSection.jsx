@@ -91,18 +91,18 @@ export default function CommentSection({ articleId }) {
           </small>
         </Form.Group>
 
-        <Button
-          type="submit"
+        <button
+          type="submit" className="articleDetailsButton"
           disabled={characterCount >= maxCharacterLimit}
-          style={{
-            backgroundColor: "#C5C6C7",
-            borderColor: "#C5C6C7",
-            borderRadius: "50px",
-            color: "#1F2833",
-          }}
+          // style={{
+          //   backgroundColor: "#C5C6C7",
+          //   borderColor: "#C5C6C7",
+          //   borderRadius: "50px",
+          //   color: "#1F2833",
+          // }}
         >
           Submit Comment
-        </Button>
+        </button>
       </Form>
     </div>
   );

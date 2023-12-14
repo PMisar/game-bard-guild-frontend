@@ -30,6 +30,11 @@ const ReviewsPage = () => {
     fetchReviews();
   }, []);
 
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "numeric", day: "numeric" };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  };
+
   // useEffect(() => {
   //   const storedToken = localStorage.getItem("authToken");
 
@@ -57,6 +62,7 @@ const ReviewsPage = () => {
   return (
     <div className="ReviewsPage">
       <div>
+        <h3>Hall of Fame 2023</h3>
         <label htmlFor="search">Search by Name:</label>
         <input
           type="text"
@@ -75,7 +81,7 @@ const ReviewsPage = () => {
         .map((review) => (
           <div key={review.id}>
             <h3>{review.name}</h3>
-            <p>Release date: {review.firstReleaseDate}</p>
+            <p>Release date: {formatDate(review.firstReleaseDate)}</p>
             <p>Tier: {review.tier}</p>
             <p>Critic score: {review.topCriticScore}</p>
           </div>

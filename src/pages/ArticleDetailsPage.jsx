@@ -1,18 +1,19 @@
 // src/pages/ArticleDetailsPage.jsx
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import CommentSection from "../components/CommentSection";
-import ArticleDetails from "../components/ArticleDetails";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { AuthContext } from "../context/auth.context";
 
 const API_URL = "http://localhost:5005";
 
 export default function ArticleDetailsPage() {
   const [article, setArticle] = useState(null);
   const { articleId } = useParams();
+  const { user } = useContext(AuthContext);
 
   const getArticle = () => {
     const storedToken = localStorage.getItem("authToken");
@@ -28,39 +29,39 @@ export default function ArticleDetailsPage() {
       .catch((error) => console.log(error));
   };
 
-  const handleLike = () => {
-    const storedToken = localStorage.getItem("authToken");
+  // const handleLike = () => {
+  //   const storedToken = localStorage.getItem("authToken");
 
-    axios
-      .put(
-        `${API_URL}/api/articles/${articleId}/like`,
-        {},
-        {
-          headers: { Authorization: `Bearer ${storedToken}` },
-        }
-      )
-      .then((response) => {
-        setArticle(response.data);
-      })
-      .catch((error) => console.log(error));
-  };
+  //   axios
+  //     .put(
+  //       `${API_URL}/api/articles/${articleId}/like`,
+  //       {},
+  //       {
+  //         headers: { Authorization: `Bearer ${storedToken}` },
+  //       }
+  //     )
+  //     .then((response) => {
+  //       setArticle(response.data);
+  //     })
+  //     .catch((error) => console.log(error));
+  // };
 
-  const handleUnlike = () => {
-    const storedToken = localStorage.getItem("authToken");
+  // const handleUnlike = () => {
+  //   const storedToken = localStorage.getItem("authToken");
 
-    axios
-      .delete(
-        `${API_URL}/api/articles/${articleId}/unlike`,
-        {},
-        {
-          headers: { Authorization: `Bearer ${storedToken}` },
-        }
-      )
-      .then((response) => {
-        setArticle(response.data);
-      })
-      .catch((error) => console.log(error));
-  };
+  //   axios
+  //     .delete(
+  //       `${API_URL}/api/articles/${articleId}/unlike`,
+  //       {},
+  //       {
+  //         headers: { Authorization: `Bearer ${storedToken}` },
+  //       }
+  //     )
+  //     .then((response) => {
+  //       setArticle(response.data);
+  //     })
+  //     .catch((error) => console.log(error));
+  // };
 
   useEffect(() => {
     getArticle();
@@ -71,14 +72,19 @@ export default function ArticleDetailsPage() {
     return new Date(timestamp).toLocaleDateString();
   };
 
+  const isAuthor = article && user && article.user && article.user._id === user._id;
+
+
   return (
     <div className="ArticleDetails" style={{ padding: "10%", margin: "20px" }}>
       {article && (
         <>
           <h1>{article.title}</h1>
-          <img src={article.imageUrl} style={{ width: '100%', paddingTop: '30px', paddingBottom: '30px'}} />
+          <img
+            src={article.imageUrl}
+            style={{ width: "100%", paddingTop: "30px", paddingBottom: "30px" }}
+          />
           <p>{article.description}</p>
-
 
           <Row>
             <Col>
@@ -93,13 +99,6 @@ export default function ArticleDetailsPage() {
             </Col>
           </Row>
 
-          <button className="like-button" onClick={handleLike}>
-            Like
-          </button>
-          <button className="unlike-button" onClick={handleUnlike}>
-            Unlike
-          </button>
-
           {article.comments && article.comments.length > 0 && (
             <Link to={`/articles/${articleId}/comments`}>View Comments</Link>
           )}
@@ -108,31 +107,37 @@ export default function ArticleDetailsPage() {
         </>
       )}
 
-      <Link to="/articles">
+      <Link to="/articles" className="articleDetailsButton">
         <button
-          className="articleDetailsButton"
           style={{
-            backgroundColor: "#0D2A4A",
-            color: "white",
+            backgroundColor: "#1F2833",
+            color: "#C5C6C7",
             textDecoration: "none",
+            border: "none",
+            outline: "none",
+            boxShadow: "none",
           }}
         >
           Back to Articles
-        </button>{" "}
-      </Link>
-
-      <Link to={`/articles/edit/${articleId}`}>
-        <button
-          className="articleDetailsButton"
-          style={{
-            backgroundColor: "#0D2A4A",
-            color: "white",
-            textDecoration: "none",
-          }}
-        >
-          Edit Article
         </button>
       </Link>
+      
+      {isAuthor && (
+        <Link to={`/articles/edit/${articleId}`} className="articleDetailsButton">
+          <button
+            style={{
+              backgroundColor: "#1F2833",
+              color: "#C5C6C7",
+              textDecoration: "none",
+              border: "none",
+              outline: "none",
+              boxShadow: "none",
+            }}
+          >
+            Edit Article
+          </button>
+        </Link>
+      )}
     </div>
   );
 }
