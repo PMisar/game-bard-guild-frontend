@@ -1,0 +1,24 @@
+/* Button.module.css */
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap");
+
+.button {
+  position: relative;
+  display: inline-block;
+  font-size: 1.3em;
+  letter-spacing: 0.1em;
+  color: white;
+  text-decoration: none;
+  font-family: "Inconsolata", monospace;
+  border: 1px solid;
+  border-radius: 50px;
+  padding: 5px 20px;
+  margin-top: 30px;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 1s, box-shadow 1s;
+}
+.button:hover {
+  color: white;
+  box-shadow: 0 0 10px #66FCF1, 0 0 20px #66FCF1, 0 0 40px #66FCF1, 0 0 80px #66FCF1,
+    0 0 160px #66FCF1;
+}
