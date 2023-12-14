@@ -15,7 +15,6 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import Profile from "./pages/Profile";
 import ReviewsPage from "./pages/ReviewsPage";
-// import News from "./pages/NewsPage";
 
 export default function App() {
   return (
@@ -94,7 +93,6 @@ export default function App() {
           }
         />
       </Routes>
-      {/* <Route exact path="/news" element={<IsAnon> <NewsPage /> </IsAnon>} /> */}
 
       <Footer />
     </div>

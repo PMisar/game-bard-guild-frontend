@@ -43,7 +43,7 @@ export default function Profile() {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        // console.log(response.data);
+        
         alert("User deleted successfully");
         logOutUser()
       })
@@ -83,12 +83,6 @@ export default function Profile() {
         </div>
       )}
 
-      {/* <div className="UserArticles">
-        <h2>Your Articles</h2>
-        {userArticles.map((article) => (
-          <ArticleCard key={article._id} {...article} />
-        ))}
-      </div> */}
       <div className="UserArticles">
         <h2>Your Articles</h2>
         {userArticles.length > 0 ? (

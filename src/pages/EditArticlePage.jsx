@@ -80,16 +80,6 @@ export default function EditArticlePage(props) {
           style={{ backgroundColor: "#BCD6E5", marginTop: "30px" }}
         />
 
-        {/* <label>
-          Image:
-          <input
-            type="file"
-            name="image"
-            className="form-control-file"
-            onChange={(e) => setImage(e.target.files[0])}
-          />
-        </label> */}
-
         <button
           className="articleDetailsButton"
           type="submit"

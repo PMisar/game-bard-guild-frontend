@@ -75,10 +75,8 @@ export default function ArticleListPage() {
         {articles.map((article) => (
           <div key={article._id}>
             <ArticleCard {...article} />
-            <ArticleDetails article={article} />
-
             <button
-              style={{ marginTop: "5px" }}
+              style={{ marginTop: "35px", marginBottom: "0px" }}
               className={
                 article.likes.includes(user._id)
                   ? "unlike-button"
@@ -92,6 +90,9 @@ export default function ArticleListPage() {
             >
               {article.likes.includes(user._id) ? "Unlike" : "Like"}
             </button>
+            <ArticleDetails article={article} />
+
+            
           </div>
         ))}
       </div>

@@ -47,7 +47,7 @@ export default function AddArticle(props) {
 
       <Form
         onSubmit={handleSubmit}
-        enctype="multipart/form-data"
+        encType="multipart/form-data"
         className="w-100"
       >
         <Form.Group className="mb-3">

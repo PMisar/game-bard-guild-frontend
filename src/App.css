@@ -93,15 +93,22 @@ font-family: 'Oswald', sans-serif;
 
 .comment-container {
   display: flex;
-  align-items: center;
-  padding-left: 10px;
-  margin-bottom: 10px; 
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.comment-container .timestamp {
+  font-size: 0.8em;
+  color: #66fcf1;
 }
 
 .comment-container p {
-  margin: 0;
-  margin-right: 10px;
-  justify-content: center;
+  margin: 5px 0;
+  font-size: 1em;
+  color: #c5c6c7;
 }
 
 .ReviewsPage {
@@ -133,16 +140,6 @@ footer {
   }
 
 /* FOOTER */
-/* footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: #0b0c10;
-  color: #c5c6c7;
-} */
-
-
 
 .social-icons {
   display: flex;

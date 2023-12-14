@@ -37,9 +37,6 @@ const CustomNavbar = () => {
         <Nav className="m-auto">
           {isLoggedIn ? (
             <>
-              {/* <Nav.Link eventKey="2" as={Link} to="/news" className="custom-link">
-              News
-            </Nav.Link> */}
               <Nav.Link eventKey="3" as={Link} to="/reviews" className="custom-link">
                 Reviews
               </Nav.Link>
@@ -53,9 +50,6 @@ const CustomNavbar = () => {
             </>
           ) : (
             <>
-              {/* <Nav.Link eventKey="7" as={Link} to="/news" className="custom-link">
-                News
-              </Nav.Link> */}
               <Nav.Link eventKey="8" as={Link} to="/login" className="custom-link">
                 Login
               </Nav.Link>

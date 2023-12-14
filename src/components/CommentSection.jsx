@@ -10,7 +10,7 @@ export default function CommentSection({ articleId }) {
   const [comments, setComments] = React.useState([]);
   const [newComment, setNewComment] = React.useState("");
   const [characterCount, setCharacterCount] = React.useState(0);
-  const maxCharacterLimit = 200;
+  const maxCharacterLimit = 150;
 
   const getComments = () => {
     const storedToken = localStorage.getItem("authToken");
@@ -20,10 +20,6 @@ export default function CommentSection({ articleId }) {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        //       setComments(response.data);
-        //     })
-        //     .catch((error) => console.log(error));
-        // };
         const populatedComments = response.data.map((comment) => ({
           ...comment,
           user: comment.userId,
@@ -70,7 +66,7 @@ export default function CommentSection({ articleId }) {
               {new Date(comment.createdAt).toLocaleString()}:
             </p>
 
-            <p>{comment.user.name}:</p>
+            <p>{comment.user.name} wrote:</p>
             <p>{comment.comment}</p>
           </div>
         ))}
@@ -86,20 +82,15 @@ export default function CommentSection({ articleId }) {
             placeholder="Add a comment..."
             style={{ backgroundColor: "#BCD6E5" }}
           />
-          <small className="text-muted" style={{ color: "#C5C6C7" }}>
+          <small className="text" style={{ color: "white" }}>
             Characters remaining: {maxCharacterLimit - characterCount}
           </small>
         </Form.Group>
 
         <button
-          type="submit" className="articleDetailsButton"
+          type="submit"
+          className="articleDetailsButton"
           disabled={characterCount >= maxCharacterLimit}
-          // style={{
-          //   backgroundColor: "#C5C6C7",
-          //   borderColor: "#C5C6C7",
-          //   borderRadius: "50px",
-          //   color: "#1F2833",
-          // }}
         >
           Submit Comment
         </button>

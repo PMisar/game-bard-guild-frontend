@@ -29,40 +29,6 @@ export default function ArticleDetailsPage() {
       .catch((error) => console.log(error));
   };
 
-  // const handleLike = () => {
-  //   const storedToken = localStorage.getItem("authToken");
-
-  //   axios
-  //     .put(
-  //       `${API_URL}/api/articles/${articleId}/like`,
-  //       {},
-  //       {
-  //         headers: { Authorization: `Bearer ${storedToken}` },
-  //       }
-  //     )
-  //     .then((response) => {
-  //       setArticle(response.data);
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
-
-  // const handleUnlike = () => {
-  //   const storedToken = localStorage.getItem("authToken");
-
-  //   axios
-  //     .delete(
-  //       `${API_URL}/api/articles/${articleId}/unlike`,
-  //       {},
-  //       {
-  //         headers: { Authorization: `Bearer ${storedToken}` },
-  //       }
-  //     )
-  //     .then((response) => {
-  //       setArticle(response.data);
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
-
   useEffect(() => {
     getArticle();
   }, []);
