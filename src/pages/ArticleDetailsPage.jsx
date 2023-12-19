@@ -39,8 +39,7 @@ export default function ArticleDetailsPage() {
   };
 
   const isAuthor = article && user && article.user && article.user._id === user._id;
-
-
+  
   return (
     <div className="ArticleDetails" style={{ padding: "10%", margin: "20px" }}>
       {article && (

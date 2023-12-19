@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Form, Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import axios from "axios";
 
 const API_URL = "http://localhost:5005";
@@ -48,6 +48,7 @@ export default function SignupPage() {
           <Form.Control
             type="text"
             name="name"
+            placeholder="Enter nickname"
             value={name}
             onChange={handleName}
           />
@@ -58,6 +59,7 @@ export default function SignupPage() {
           <Form.Control
             type="email"
             name="email"
+            placeholder="Enter email"
             value={email}
             onChange={handleEmail}
           />
@@ -68,6 +70,7 @@ export default function SignupPage() {
           <Form.Control
             type="password"
             name="password"
+            placeholder="Enter password"
             value={password}
             onChange={handlePassword}
           />

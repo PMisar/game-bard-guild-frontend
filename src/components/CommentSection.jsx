@@ -1,7 +1,7 @@
 // src/components/CommentSection.jsx
 
 import React from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import axios from "axios";
 
 const API_URL = "http://localhost:5005";
@@ -65,7 +65,6 @@ export default function CommentSection({ articleId }) {
             <p className="timestamp">
               {new Date(comment.createdAt).toLocaleString()}:
             </p>
-
             <p>{comment.user.name} wrote:</p>
             <p>{comment.comment}</p>
           </div>
