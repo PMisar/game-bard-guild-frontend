@@ -5,7 +5,8 @@ import { Form } from "react-bootstrap";
 import axios from "axios";
 import CustomButton from "./Button";
 
-const API_URL = "http://localhost:5005";
+// const API_URL = "http://localhost:5005";
+const API_URL = "https://game-bard-guild-backend.onrender.com";
 
 export default function AddArticle(props) {
   const [title, setTitle] = React.useState("");

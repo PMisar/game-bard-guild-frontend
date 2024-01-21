@@ -8,7 +8,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { AuthContext } from "../context/auth.context";
 
-const API_URL = "http://localhost:5005";
+// const API_URL = "http://localhost:5005";
+const API_URL = "https://game-bard-guild-backend.onrender.com";
 
 export default function ArticleDetailsPage() {
   const [article, setArticle] = useState(null);

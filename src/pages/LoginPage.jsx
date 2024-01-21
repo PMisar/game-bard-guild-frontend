@@ -6,7 +6,8 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 
-const API_URL = "http://localhost:5005";
+// const API_URL = "http://localhost:5005";
+const API_URL = "https://game-bard-guild-backend.onrender.com";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
