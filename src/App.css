@@ -22,15 +22,16 @@ font-family: 'Oswald', sans-serif;
 }
 
 /* NAVBAR */
-.custom-navbar .navbar-brand {
+.navbar-brand {
   margin-left: 10px;
 }
 
 /* NAVBAR BUTTONS */
+
 .custom-link {
-  position: relative;
-  display: inline-block;
-  font-size: 1.5em;
+  /* position: relative; */
+  /* display: inline-block; */
+  /* font-size: 1.5em; */
   letter-spacing: 0.1em;
   color: #c5c6c7;
   text-decoration: none;
@@ -42,13 +43,18 @@ font-family: 'Oswald', sans-serif;
   z-index: 1;
   overflow: hidden;
   transition: color 1s, box-shadow 1s;
+  /* margin: 0 auto; */
 }
-
 .custom-link:hover {
   transition-delay: 0s, 1s;
   color: #c5c6c7;
   box-shadow: 0 0 10px #00c6f8, 0 0 20px #00c6f8, 0 0 40px #00c6f8,
     0 0 80px #00c6f8;
+}
+@media (max-width: 767.98px) {
+  .navbar-expand-md .navbar-text {
+    display: none;
+  }
 }
 
 .home-image-container {
@@ -88,7 +94,7 @@ font-family: 'Oswald', sans-serif;
   border-radius: 10px;
   border-color: #00C6F8;
   padding: 5%;
-  margin: 20px 0px;
+  margin: 20px 0;
 }
 
 .comment-container {

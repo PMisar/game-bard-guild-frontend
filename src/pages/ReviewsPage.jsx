@@ -17,8 +17,9 @@ const ReviewsPage = () => {
 
     const fetchReviews = async () => {
       try {
-        const response = await axios.get(`${API_URL}/api/game/hall-of-fame`, {
+        const response = await axios.get(`${API_URL}/api/releases/`, {
           headers: { Authorization: `Bearer ${storedToken}` },
+          params: { gameName: "defaultGameName" },
         });
         console.log(response.data);
         setReviews(response.data);
@@ -41,7 +42,9 @@ const ReviewsPage = () => {
     <div className="ReviewsPage">
       <div>
         <h3>Hall of Fame 2023</h3>
-        <label htmlFor="search" style={{ margin: '50px 0px'}}>Search by Name:</label>
+        <label htmlFor="search" style={{ margin: "50px 0px" }}>
+          Search by Name:
+        </label>
         <input
           type="text"
           id="search"

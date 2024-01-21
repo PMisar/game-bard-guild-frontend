@@ -57,7 +57,7 @@ export default function ArticleListPage() {
       .then(getAllArticles)
       .catch((error) => console.log(error));
   };
-  console.log(articles);
+  
   return (
     <div
       className="container text-center my-4 p-4"

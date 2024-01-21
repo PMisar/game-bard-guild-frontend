@@ -22,6 +22,7 @@ const CustomNavbar = () => {
 
   return (
     // collapseOnSelect + eventKey="1" to collapse on link click
+    <div> 
     <Navbar collapseOnSelect variant="dark" style={navbarStyle} expand="md">
       <Navbar.Brand as={Link} to="/" style={brandStyle}>
         <img
@@ -34,7 +35,7 @@ const CustomNavbar = () => {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" style={{ border: 'none' }} />
       <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="m-auto">
+        <Nav className="m-auto" style={{ flex: '1', justifyContent: 'end', paddingRight: '10px' }}>
           {isLoggedIn ? (
             <>
               <Nav.Link eventKey="3" as={Link} to="/reviews" className="custom-link">
@@ -64,6 +65,7 @@ const CustomNavbar = () => {
         )}
       </Navbar.Collapse>
     </Navbar>
+    </div>
   );
 };
 
