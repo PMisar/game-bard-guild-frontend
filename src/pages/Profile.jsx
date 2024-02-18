@@ -5,8 +5,7 @@ import axios from "axios";
 import ArticleCard from "../components/ArticleCard";
 import { AuthContext } from "../context/auth.context";
 
-// const API_URL = "http://localhost:5005";
-const API_URL = "https://game-bard-guild-backend.onrender.com";
+const API_URL = "http://localhost:10000";
 
 export default function Profile() {
   const [user, setUser] = useState(null);

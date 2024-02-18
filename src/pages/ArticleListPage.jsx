@@ -7,8 +7,7 @@ import AddArticle from "../components/AddArticle";
 import ArticleDetails from "../components/ArticleDetails";
 import { AuthContext } from "../context/auth.context";
 
-// const API_URL = "http://localhost:5005";
-const API_URL = "https://game-bard-guild-backend.onrender.com";
+const API_URL = "http://localhost:10000";
 
 export default function ArticleListPage() {
   const [articles, setArticles] = useState([]);

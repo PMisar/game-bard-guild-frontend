@@ -4,8 +4,7 @@ import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
-// const API_URL = "http://localhost:5005";
-const API_URL = "https://game-bard-guild-backend.onrender.com";
+const API_URL = "http://localhost:10000";
 
 const ReviewsPage = () => {
   const [reviews, setReviews] = useState([]);

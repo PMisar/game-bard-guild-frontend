@@ -5,8 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 
-// const API_URL = "http://localhost:5005";
-const API_URL = "https://game-bard-guild-backend.onrender.com";
+const API_URL = "http://localhost:10000";
 
 export default function SignupPage() {
   const [email, setEmail] = useState("");
