@@ -38,8 +38,8 @@ export default function ArticleDetailsPage() {
     return new Date(timestamp).toLocaleDateString();
   };
 
-  const isAuthor = article && user && article.user && article.user._id === user._id;
-
+  const isAuthor =
+    article && user && article.user && article.user._id === user._id;
 
   return (
     <div className="ArticleDetails" style={{ padding: "10%", margin: "20px" }}>
@@ -87,9 +87,12 @@ export default function ArticleDetailsPage() {
           Back to Articles
         </button>
       </Link>
-      
+
       {isAuthor && (
-        <Link to={`/articles/edit/${articleId}`} className="articleDetailsButton">
+        <Link
+          to={`/articles/edit/${articleId}`}
+          className="articleDetailsButton"
+        >
           <button
             style={{
               backgroundColor: "#1F2833",
